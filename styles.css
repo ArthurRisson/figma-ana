@@ -182,7 +182,7 @@ body {
   display: none;
 }
 
-/* Figma Screen Frame (402 x 900) */
+/* Figma Screen Frame (402 x 900) — Status bar removed, 24px top spacing */
 .figma-Screen {
   width: 402px;
   height: 900px;
@@ -193,6 +193,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding-top: 24px;
   flex-shrink: 0;
   box-shadow:
     0 20px 50px rgba(41, 35, 53, 0.12),
@@ -206,6 +207,19 @@ body {
   width: 402px;
   flex-shrink: 0;
   overflow: hidden;
+}
+
+.section-content-flex {
+  position: relative;
+  width: 402px;
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+
+.section-content-flex::-webkit-scrollbar {
+  display: none;
 }
 
 .el {
@@ -233,7 +247,7 @@ body {
 .fw-semibold { font-weight: 600; }
 .fw-bold { font-weight: 700; }
 
-/* Asset wrapper & image rules: preserve natural SVG geometry */
+/* Asset wrapper & image rules */
 .icon-slot {
   position: absolute;
   display: flex;
@@ -269,6 +283,15 @@ body {
   transform: scale(0.985);
 }
 
+.btn-primary-action {
+  transition: background-color 0.2s ease, opacity 0.2s ease, transform 0.12s ease;
+}
+
+.btn-primary-action.is-disabled {
+  background-color: #d7cfdf !important;
+  cursor: not-allowed;
+}
+
 .form-input-box {
   position: absolute;
   left: 24px;
@@ -301,7 +324,20 @@ body {
   box-shadow: 0 0 0 2px rgba(143, 210, 250, 0.25);
 }
 
-/* Search input on screen 04 */
+/* Links for Terms & Privacy */
+.terms-link {
+  color: #e46358;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+.terms-link:hover {
+  color: #292335;
+}
+
+/* Search input on screen 05 (Comunidades) */
 .search-input-el {
   position: absolute;
   left: 43px;
@@ -321,7 +357,7 @@ body {
   color: #77717f;
 }
 
-/* Community post input on screen 05 */
+/* Community post input */
 .post-input-el {
   position: absolute;
   left: 52px;
@@ -355,7 +391,7 @@ body {
   border-color: #8fd2fa !important;
 }
 
-/* Toggle switch on screen 06 */
+/* Toggle switch on profile */
 .toggle-switch {
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -371,6 +407,326 @@ body {
 
 .toggle-switch.is-off .toggle-knob {
   left: 3px !important;
+}
+
+/* =========================================================================
+   Screen 02 · Suas metas (Goal configuration cards)
+   ========================================================================= */
+.goals-ScrollContainer {
+  width: 100%;
+  padding: 6px 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.goal-HabitCard {
+  width: 354px;
+  background: #ffffff;
+  border: 1px solid #e9e3ee;
+  border-radius: 20px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.goal-CardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.goal-HabitIdentity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.goal-SymbolBox {
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  background: #eee7fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.goal-HabitTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: #292335;
+  line-height: 1.3;
+}
+
+.goal-HabitCategory {
+  font-size: 11px;
+  font-weight: 400;
+  color: #77717f;
+}
+
+.goal-BeginnerBanner {
+  background: #ddedaa;
+  border-radius: 14px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.goal-BeginnerTag {
+  font-size: 9px;
+  font-weight: 700;
+  color: #415229;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.goal-BeginnerText {
+  font-size: 11px;
+  font-weight: 500;
+  color: #292335;
+  line-height: 1.35;
+}
+
+.goal-PresetRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.goal-PresetBtn {
+  flex: 1;
+  appearance: none;
+  border: 1px solid #e9e3ee;
+  background: #faf8f5;
+  color: #77717f;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 7px 8px;
+  border-radius: 11px;
+  cursor: pointer;
+  transition: all 0.16s ease;
+  text-align: center;
+}
+
+.goal-PresetBtn.is-active {
+  background: #8fd2fa;
+  border-color: #8fd2fa;
+  color: #ffffff;
+}
+
+.goal-RowsList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.goal-FreqRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #faf8f5;
+  border-radius: 13px;
+  padding: 8px 10px;
+}
+
+.goal-FreqInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.goal-FreqLabel {
+  font-size: 10px;
+  font-weight: 600;
+  color: #e46358;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.goal-FreqValue {
+  font-size: 12px;
+  font-weight: 600;
+  color: #292335;
+}
+
+.goal-Stepper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.goal-StepBtn {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  border: 1px solid #e9e3ee;
+  background: #ffffff;
+  color: #292335;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.14s ease;
+}
+
+.goal-StepBtn:hover {
+  background: #eee7fa;
+  border-color: #b69bdd;
+}
+
+/* =========================================================================
+   Terms & Privacy Policy Modal
+   ========================================================================= */
+.terms-ModalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(41, 35, 53, 0.48);
+  backdrop-filter: blur(4px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 300;
+}
+
+.terms-ModalBackdrop.is-open {
+  display: flex;
+}
+
+.terms-ModalCard {
+  width: 100%;
+  max-width: 380px;
+  max-height: 82vh;
+  background: #faf8f5;
+  border-radius: 26px;
+  border: 1px solid #e9e3ee;
+  box-shadow: 0 24px 60px rgba(41, 35, 53, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.terms-ModalHeader {
+  padding: 18px 20px 14px;
+  background: #ffffff;
+  border-bottom: 1px solid #e9e3ee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.terms-ModalTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #e46358;
+}
+
+.terms-ModalClose {
+  appearance: none;
+  border: none;
+  background: #eee7fa;
+  color: #292335;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.terms-ModalBody {
+  padding: 18px 20px;
+  overflow-y: auto;
+  font-size: 12px;
+  line-height: 1.55;
+  color: #292335;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.terms-ModalBody h4 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #292335;
+  margin-top: 4px;
+}
+
+.terms-ModalBody p {
+  color: #77717f;
+}
+
+.terms-ModalFooter {
+  padding: 14px 20px;
+  background: #ffffff;
+  border-top: 1px solid #e9e3ee;
+  display: flex;
+  gap: 10px;
+}
+
+.terms-BtnSecondary {
+  flex: 1;
+  appearance: none;
+  border: 1px solid #e9e3ee;
+  background: #ffffff;
+  color: #77717f;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 11px 14px;
+  border-radius: 13px;
+  cursor: pointer;
+}
+
+.terms-BtnPrimary {
+  flex: 1.3;
+  appearance: none;
+  border: none;
+  background: #8fd2fa;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 11px 14px;
+  border-radius: 13px;
+  cursor: pointer;
+}
+
+/* Habit switcher pill on Meu Progresso when multiple habits selected */
+.progress-HabitSwitcher {
+  display: flex;
+  gap: 6px;
+  padding: 0 24px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.progress-HabitPill {
+  appearance: none;
+  border: 1px solid #e9e3ee;
+  background: #ffffff;
+  color: #77717f;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.progress-HabitPill.is-active {
+  background: #8fd2fa;
+  border-color: #8fd2fa;
+  color: #ffffff;
 }
 
 /* Toast notification */
@@ -389,7 +745,7 @@ body {
   opacity: 0;
   pointer-events: none;
   transition: all 0.22s ease;
-  z-index: 200;
+  z-index: 400;
 }
 
 .proto-Toast.is-visible {

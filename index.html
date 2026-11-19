@@ -12,17 +12,18 @@
   <header class="proto-Header">
     <div class="proto-Brand">
       <span class="proto-Logo">Oca</span>
-      <span class="proto-Badge">Protótipo Figma · 7 Telas</span>
+      <span class="proto-Badge">Protótipo Interativo · 8 Telas</span>
     </div>
 
     <nav class="proto-ScreenTabs" aria-label="Navegação entre telas do protótipo">
       <button type="button" class="proto-TabBtn is-active" data-target-screen="screen-00">00 · Criar perfil</button>
       <button type="button" class="proto-TabBtn" data-target-screen="screen-01">01 · Escolha de hábitos</button>
-      <button type="button" class="proto-TabBtn" data-target-screen="screen-02">02 · Hoje</button>
-      <button type="button" class="proto-TabBtn" data-target-screen="screen-03">03 · Meu progresso</button>
-      <button type="button" class="proto-TabBtn" data-target-screen="screen-04">04 · Comunidades</button>
-      <button type="button" class="proto-TabBtn" data-target-screen="screen-05">05 · Comunidade de leitura</button>
-      <button type="button" class="proto-TabBtn" data-target-screen="screen-06">06 · Meu perfil</button>
+      <button type="button" class="proto-TabBtn" data-target-screen="screen-02-goals">02 · Suas metas</button>
+      <button type="button" class="proto-TabBtn" data-target-screen="screen-02">03 · Hoje</button>
+      <button type="button" class="proto-TabBtn" data-target-screen="screen-03">04 · Meu progresso</button>
+      <button type="button" class="proto-TabBtn" data-target-screen="screen-04">05 · Comunidades</button>
+      <button type="button" class="proto-TabBtn" data-target-screen="screen-05">06 · Comunidade</button>
+      <button type="button" class="proto-TabBtn" data-target-screen="screen-06">07 · Meu perfil</button>
     </nav>
 
     <div class="proto-ViewMode">
@@ -34,30 +35,17 @@
   <main class="proto-Stage mode-single" id="proto-stage">
 
     <!-- =======================================================================
-         00 · Criar perfil (3:566)
+         00 · Criar perfil (3:566) — Sem barra de status
          ======================================================================= -->
     <div class="screen-Wrapper is-current" id="screen-00">
       <span class="screen-Label">00 · Criar perfil</span>
       <section class="figma-Screen" data-node-id="3:566" data-name="00 · Criar perfil">
-        <!-- Status (3:567) -->
-        <div class="section-block" style="height: 44px;" data-node-id="3:567" data-name="Status">
-          <p class="txt txt-nowrap fw-semibold" style="left: 25px; top: 11px; font-size: 13px; color: #292335;" data-node-id="3:571">9:41</p>
-          <div class="icon-slot" style="left: 306px; top: 12px; width: 17px; height: 17px;" data-node-id="3:572" data-name="Ícone · signal">
-            <img src="assets/856b4.svg" alt="" width="17" height="17" />
-          </div>
-          <div class="icon-slot" style="left: 330px; top: 12px; width: 17px; height: 17px;" data-node-id="3:574" data-name="Ícone · wifi">
-            <img src="assets/b4ca1.svg" alt="" width="17" height="17" />
-          </div>
-          <div class="icon-slot" style="left: 353px; top: 11px; width: 23px; height: 23px;" data-node-id="3:576" data-name="Ícone · battery">
-            <img src="assets/87933.svg" alt="" width="23" height="23" />
-          </div>
-        </div>
 
         <!-- Boas-vindas (3:568) -->
         <div class="section-block" style="height: 232px;" data-node-id="3:568" data-name="Boas-vindas">
           <p class="txt txt-nowrap fw-bold" style="left: 24px; top: 0px; font-size: 35px; color: #8fd2fa;" data-node-id="3:579">Oca</p>
           <div class="el" style="left: 258px; top: 12px; width: 120px; height: 28px; border-radius: 14px; background-color: #fab78f;" data-node-id="3:580" data-name="Etapa do cadastro"></div>
-          <p class="txt fw-semibold" style="left: 268px; top: 17px; width: 97px; font-size: 11px; color: #e46358;" data-node-id="3:581">PASSO 1 DE 2 </p>
+          <p class="txt fw-semibold" style="left: 268px; top: 17px; width: 97px; font-size: 11px; color: #e46358;" data-node-id="3:581">PASSO 1 DE 3</p>
           <div class="txt txt-nowrap fw-semibold" style="left: 24px; top: 69px; font-size: 31px; color: #e46358;" data-node-id="3:582">
             <p>Bons hábitos.</p>
             <p>Boas companhias.</p>
@@ -69,18 +57,17 @@
         </div>
 
         <!-- Cadastro (3:569) -->
-        <div class="section-block" style="height: 542px;" data-node-id="3:569" data-name="Cadastro">
+        <div class="section-block" style="height: 562px;" data-node-id="3:569" data-name="Cadastro">
           <p class="txt txt-nowrap fw-semibold" style="left: 24px; top: 7px; font-size: 21px; color: #292335;" data-node-id="3:584">Vamos criar um perfil para você</p>
-          <div class="el" style="left: 174px; top: -23px; width: 100px; height: 100px; pointer-events: none;" data-node-id="16:9"></div>
 
           <label for="input-profile-name" class="txt txt-nowrap fw-medium" style="left: 24px; top: 58px; font-size: 12px; color: #292335;" data-node-id="3:585">Como quer ser chamado(a)?</label>
           <div class="form-input-box" style="top: 85px;" data-node-id="3:586" data-name="Como quer ser chamado(a)?">
-            <input id="input-profile-name" type="text" value="Marina Oliveira" aria-label="Como quer ser chamado(a)?" data-node-id="3:587" />
+            <input id="input-profile-name" type="text" value="Marina Oliveira" placeholder="Seu nome" aria-label="Como quer ser chamado(a)?" data-node-id="3:587" />
           </div>
 
           <label for="input-profile-email" class="txt txt-nowrap fw-medium" style="left: 24px; top: 158px; font-size: 12px; color: #292335;" data-node-id="3:588">Seu e-mail</label>
           <div class="form-input-box" style="top: 185px;" data-node-id="3:589" data-name="Seu e-mail">
-            <input id="input-profile-email" type="email" value="marina.oliveira@exemplo.com" aria-label="Seu e-mail" data-node-id="3:590" />
+            <input id="input-profile-email" type="email" value="marina.oliveira@exemplo.com" placeholder="voce@exemplo.com" aria-label="Seu e-mail" data-node-id="3:590" />
           </div>
 
           <label for="input-profile-pass" class="txt txt-nowrap fw-medium" style="left: 24px; top: 258px; font-size: 12px; color: #292335;" data-node-id="3:591">Crie uma senha</label>
@@ -94,9 +81,9 @@
           <p class="txt txt-nowrap fw-regular" style="left: 24px; top: 344px; font-size: 11px; color: #77717f;" data-node-id="3:597">Use pelo menos 8 caracteres.</p>
 
           <div class="el terms-checkbox" id="checkbox-terms" style="left: 24px; top: 390px; width: 22px; height: 22px; border-radius: 7px; background-color: #ffffff; border: 1.5px solid #ab99c2;" data-node-id="3:598" data-name="Aceitar termos de uso" role="checkbox" aria-checked="false" tabindex="0"></div>
-          <div class="txt fw-regular interactive-click" id="label-terms" style="left: 58px; top: 386px; width: 310px; font-size: 12px; color: #77717f;" data-node-id="3:601">
-            <p>Concordo com os Termos de uso e a</p>
-            <p>Política de privacidade.</p>
+          <div class="txt fw-regular" style="left: 58px; top: 386px; width: 310px; font-size: 12px; color: #77717f;" data-node-id="3:601">
+            <p>Concordo com os <span class="terms-link" id="link-open-terms" role="button" tabindex="0">Termos de uso</span> e a</p>
+            <p><span class="terms-link" id="link-open-privacy" role="button" tabindex="0">Política de privacidade</span>.</p>
           </div>
 
           <div class="txt fw-regular" style="left: 24px; top: 456px; width: 350px; font-size: 12px; color: #77717f;" data-node-id="3:602">
@@ -119,129 +106,131 @@
     </div>
 
     <!-- =======================================================================
-         01 · Escolha de hábitos (3:2)
+         01 · Escolha de hábitos (3:2) — Todos desmarcados por padrão + Estudar
          ======================================================================= -->
     <div class="screen-Wrapper" id="screen-01">
       <span class="screen-Label">01 · Escolha de hábitos</span>
       <section class="figma-Screen" data-node-id="3:2" data-name="01 · Escolha de hábitos">
-        <!-- Status (3:3) -->
-        <div class="section-block" style="height: 44px;" data-node-id="3:3" data-name="Status">
-          <p class="txt txt-nowrap fw-semibold" style="left: 25px; top: 11px; font-size: 13px; color: #292335;" data-node-id="3:34">9:41</p>
-          <div class="icon-slot" style="left: 306px; top: 12px; width: 17px; height: 17px;" data-node-id="3:35" data-name="Ícone · signal">
-            <img src="assets/856b4.svg" alt="" width="17" height="17" />
-          </div>
-          <div class="icon-slot" style="left: 330px; top: 12px; width: 17px; height: 17px;" data-node-id="3:37" data-name="Ícone · wifi">
-            <img src="assets/b4ca1.svg" alt="" width="17" height="17" />
-          </div>
-          <div class="icon-slot" style="left: 353px; top: 11px; width: 23px; height: 23px;" data-node-id="3:39" data-name="Ícone · battery">
-            <img src="assets/87933.svg" alt="" width="23" height="23" />
-          </div>
-        </div>
 
         <!-- Cabeçalho (3:4) -->
-        <div class="section-block" style="height: 116px;" data-node-id="3:4" data-name="Cabeçalho">
+        <div class="section-block" style="height: 112px;" data-node-id="3:4" data-name="Cabeçalho">
           <p class="txt txt-nowrap fw-bold interactive-click" data-goto-screen="screen-00" style="left: 24px; top: 0px; font-size: 35px; color: #58d9e4;" data-node-id="3:50">Oca</p>
           <div class="el" style="left: 258px; top: 12px; width: 120px; height: 28px; border-radius: 14px; background-color: #fab78f;" data-node-id="3:51" data-name="PASSO 2 DE 3"></div>
-          <p class="txt txt-nowrap fw-semibold" style="left: 268px; top: 17px; font-size: 11px; color: #e46358;" data-node-id="3:52">PASSO 2 DE 2</p>
-          <div class="txt txt-nowrap fw-semibold" style="left: 24px; top: 51px; font-size: 22px; color: #e46358;" data-node-id="3:53">
+          <p class="txt txt-nowrap fw-semibold" style="left: 268px; top: 17px; font-size: 11px; color: #e46358;" data-node-id="3:52">PASSO 2 DE 3</p>
+          <div class="txt txt-nowrap fw-semibold" style="left: 24px; top: 50px; font-size: 22px; color: #e46358;" data-node-id="3:53">
             <p>Pequenos passos.</p>
             <p>Novos começos.</p>
           </div>
         </div>
 
-        <!-- Conteúdo (3:5) -->
-        <div class="section-block" style="height: 658px;" data-node-id="3:5" data-name="Conteúdo">
-          <p class="txt txt-nowrap fw-semibold" style="left: 24px; top: 12px; font-size: 21px; color: #e46358;" data-node-id="3:54">O que você quer cultivar?</p>
-          <div class="txt txt-nowrap fw-regular" style="left: 24px; top: 48px; font-size: 14px; color: #77717f;" data-node-id="3:55">
+        <!-- Conteúdo (3:5) — 6 hábitos todos em branco inicialmente -->
+        <div class="section-block" style="height: 682px;" data-node-id="3:5" data-name="Conteúdo">
+          <p class="txt txt-nowrap fw-semibold" style="left: 24px; top: 4px; font-size: 21px; color: #e46358;" data-node-id="3:54">O que você quer cultivar?</p>
+          <div class="txt txt-nowrap fw-regular" style="left: 24px; top: 38px; font-size: 14px; color: #77717f;" data-node-id="3:55">
             <p>Escolha até 3 hábitos para começar.</p>
             <p>Você pode mudar tudo depois.</p>
           </div>
 
-          <!-- Hábito 1: Ler um pouco (3:56) -->
-          <div class="el habit-select-card interactive-click is-selected" data-habit-id="ler" style="left: 24px; top: 108px; width: 354px; height: 76px; border-radius: 18px; background-color: #eee7fa; border: 1px solid #b69bdd; overflow: hidden;" data-node-id="3:56" data-name="Ler um pouco">
-            <div class="el habit-symbol-bg" style="left: 12px; top: 13px; width: 46px; height: 46px; border-radius: 14px; background-color: #e2d6f5;" data-node-id="3:57" data-name="Símbolo do hábito"></div>
-            <div class="icon-slot" style="left: 24px; top: 25px; width: 22px; height: 22px;" data-node-id="3:58" data-name="Ícone · book">
+          <!-- Hábito 1: Leitura (3:56) -->
+          <div class="el habit-select-card interactive-click" data-habit-id="leitura" style="left: 24px; top: 88px; width: 354px; height: 70px; border-radius: 18px; background-color: #ffffff; border: 1px solid #e9e3ee; overflow: hidden;" data-node-id="3:56" data-name="Leitura">
+            <div class="el habit-symbol-bg" style="left: 12px; top: 11px; width: 46px; height: 46px; border-radius: 14px; background-color: #faf8f5;" data-node-id="3:57" data-name="Símbolo do hábito"></div>
+            <div class="icon-slot" style="left: 24px; top: 23px; width: 22px; height: 22px;" data-node-id="3:58" data-name="Ícone · book">
               <img src="assets/94883.svg" alt="" width="22" height="22" />
             </div>
-            <p class="txt txt-nowrap fw-semibold" style="left: 71px; top: 13px; font-size: 15px; color: #292335;" data-node-id="3:60">Ler um pouco</p>
-            <p class="txt txt-nowrap fw-regular" style="left: 71px; top: 38px; font-size: 12px; color: #77717f;" data-node-id="3:61">15 minutos por dia</p>
-            <div class="el habit-check-box" style="left: 311px; top: 25px; width: 24px; height: 24px; border-radius: 8px; background-color: #8fd2fa; overflow: hidden;" data-node-id="3:62" data-name="Seleção">
-              <div class="icon-slot habit-check-icon" style="left: 3px; top: 3px; width: 18px; height: 18px;" data-node-id="3:63" data-name="Ícone · check">
+            <p class="txt txt-nowrap fw-semibold" style="left: 71px; top: 11px; font-size: 15px; color: #292335;" data-node-id="3:60">Leitura</p>
+            <p class="txt txt-nowrap fw-regular" style="left: 71px; top: 36px; font-size: 12px; color: #77717f;" data-node-id="3:61">15 minutos por dia</p>
+            <div class="el habit-check-box" style="left: 311px; top: 22px; width: 24px; height: 24px; border-radius: 8px; background-color: #ffffff; border: 1px solid #d7cfdf; overflow: hidden;" data-node-id="3:62" data-name="Seleção">
+              <div class="icon-slot habit-check-icon" style="left: 3px; top: 3px; width: 18px; height: 18px; display: none;" data-node-id="3:63" data-name="Ícone · check">
                 <img src="assets/1d291.svg" alt="" width="18" height="18" />
               </div>
             </div>
           </div>
 
-          <!-- Hábito 2: Beber água (3:65) -->
-          <div class="el habit-select-card interactive-click is-selected" data-habit-id="agua" style="left: 24px; top: 196px; width: 354px; height: 76px; border-radius: 18px; background-color: #eee7fa; border: 1px solid #b69bdd; overflow: hidden;" data-node-id="3:65" data-name="Beber água">
-            <div class="el habit-symbol-bg" style="left: 12px; top: 13px; width: 46px; height: 46px; border-radius: 14px; background-color: #e2d6f5;" data-node-id="3:66" data-name="Símbolo do hábito"></div>
-            <div class="icon-slot" style="left: 24px; top: 25px; width: 22px; height: 22px;" data-node-id="3:67" data-name="Ícone · drop">
+          <!-- Hábito 2: Estudar (NOVO) -->
+          <div class="el habit-select-card interactive-click" data-habit-id="estudar" style="left: 24px; top: 168px; width: 354px; height: 70px; border-radius: 18px; background-color: #ffffff; border: 1px solid #e9e3ee; overflow: hidden;" data-name="Estudar">
+            <div class="el habit-symbol-bg" style="left: 12px; top: 11px; width: 46px; height: 46px; border-radius: 14px; background-color: #faf8f5;" data-name="Símbolo do hábito"></div>
+            <div class="icon-slot" style="left: 24px; top: 23px; width: 22px; height: 22px;" data-name="Ícone · study">
+              <img src="assets/estudar.svg" alt="" width="22" height="22" />
+            </div>
+            <p class="txt txt-nowrap fw-semibold" style="left: 71px; top: 11px; font-size: 15px; color: #292335;">Estudar</p>
+            <p class="txt txt-nowrap fw-regular" style="left: 71px; top: 36px; font-size: 12px; color: #77717f;">30 minutos de foco por dia</p>
+            <div class="el habit-check-box" style="left: 311px; top: 22px; width: 24px; height: 24px; border-radius: 8px; background-color: #ffffff; border: 1px solid #d7cfdf; overflow: hidden;" data-name="Seleção">
+              <div class="icon-slot habit-check-icon" style="left: 3px; top: 3px; width: 18px; height: 18px; display: none;" data-name="Ícone · check">
+                <img src="assets/1d291.svg" alt="" width="18" height="18" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Hábito 3: Beber água (3:65) -->
+          <div class="el habit-select-card interactive-click" data-habit-id="agua" style="left: 24px; top: 248px; width: 354px; height: 70px; border-radius: 18px; background-color: #ffffff; border: 1px solid #e9e3ee; overflow: hidden;" data-node-id="3:65" data-name="Beber água">
+            <div class="el habit-symbol-bg" style="left: 12px; top: 11px; width: 46px; height: 46px; border-radius: 14px; background-color: #faf8f5;" data-node-id="3:66" data-name="Símbolo do hábito"></div>
+            <div class="icon-slot" style="left: 24px; top: 23px; width: 22px; height: 22px;" data-node-id="3:67" data-name="Ícone · drop">
               <img src="assets/75fa8.svg" alt="" width="22" height="22" />
             </div>
-            <p class="txt txt-nowrap fw-semibold" style="left: 71px; top: 13px; font-size: 15px; color: #292335;" data-node-id="3:69">Beber água</p>
-            <p class="txt txt-nowrap fw-regular" style="left: 71px; top: 38px; font-size: 12px; color: #77717f;" data-node-id="3:70">8 copos ao longo do dia</p>
-            <div class="el habit-check-box" style="left: 311px; top: 25px; width: 24px; height: 24px; border-radius: 8px; background-color: #8fd2fa; overflow: hidden;" data-node-id="3:71" data-name="Seleção">
-              <div class="icon-slot habit-check-icon" style="left: 3px; top: 3px; width: 18px; height: 18px;" data-node-id="3:72" data-name="Ícone · check">
+            <p class="txt txt-nowrap fw-semibold" style="left: 71px; top: 11px; font-size: 15px; color: #292335;" data-node-id="3:69">Beber água</p>
+            <p class="txt txt-nowrap fw-regular" style="left: 71px; top: 36px; font-size: 12px; color: #77717f;" data-node-id="3:70">8 copos ao longo do dia</p>
+            <div class="el habit-check-box" style="left: 311px; top: 22px; width: 24px; height: 24px; border-radius: 8px; background-color: #ffffff; border: 1px solid #d7cfdf; overflow: hidden;" data-node-id="3:71" data-name="Seleção">
+              <div class="icon-slot habit-check-icon" style="left: 3px; top: 3px; width: 18px; height: 18px; display: none;" data-node-id="3:72" data-name="Ícone · check">
                 <img src="assets/1d291.svg" alt="" width="18" height="18" />
               </div>
             </div>
           </div>
 
-          <!-- Hábito 3: Movimentar o corpo (3:74) -->
-          <div class="el habit-select-card interactive-click is-selected" data-habit-id="corpo" style="left: 24px; top: 284px; width: 354px; height: 76px; border-radius: 18px; background-color: #eee7fa; border: 1px solid #b69bdd; overflow: hidden;" data-node-id="3:74" data-name="Movimentar o corpo">
-            <div class="el habit-symbol-bg" style="left: 12px; top: 13px; width: 46px; height: 46px; border-radius: 14px; background-color: #e2d6f5;" data-node-id="3:75" data-name="Símbolo do hábito"></div>
-            <div class="icon-slot" style="left: 24px; top: 25px; width: 22px; height: 22px;" data-node-id="3:76" data-name="Ícone · walk">
+          <!-- Hábito 4: Movimentar o corpo (3:74) -->
+          <div class="el habit-select-card interactive-click" data-habit-id="corpo" style="left: 24px; top: 328px; width: 354px; height: 70px; border-radius: 18px; background-color: #ffffff; border: 1px solid #e9e3ee; overflow: hidden;" data-node-id="3:74" data-name="Movimentar o corpo">
+            <div class="el habit-symbol-bg" style="left: 12px; top: 11px; width: 46px; height: 46px; border-radius: 14px; background-color: #faf8f5;" data-node-id="3:75" data-name="Símbolo do hábito"></div>
+            <div class="icon-slot" style="left: 24px; top: 23px; width: 22px; height: 22px;" data-node-id="3:76" data-name="Ícone · walk">
               <img src="assets/90474.svg" alt="" width="22" height="22" />
             </div>
-            <p class="txt txt-nowrap fw-semibold" style="left: 71px; top: 13px; font-size: 15px; color: #292335;" data-node-id="3:79">Movimentar o corpo</p>
-            <p class="txt txt-nowrap fw-regular" style="left: 71px; top: 38px; font-size: 12px; color: #77717f;" data-node-id="3:80">Uma caminhada de 20 min</p>
-            <div class="el habit-check-box" style="left: 311px; top: 25px; width: 24px; height: 24px; border-radius: 8px; background-color: #8fd2fa; overflow: hidden;" data-node-id="3:81" data-name="Seleção">
-              <div class="icon-slot habit-check-icon" style="left: 3px; top: 3px; width: 18px; height: 18px;" data-node-id="3:82" data-name="Ícone · check">
+            <p class="txt txt-nowrap fw-semibold" style="left: 71px; top: 11px; font-size: 15px; color: #292335;" data-node-id="3:79">Movimentar o corpo</p>
+            <p class="txt txt-nowrap fw-regular" style="left: 71px; top: 36px; font-size: 12px; color: #77717f;" data-node-id="3:80">Uma caminhada de 20 min</p>
+            <div class="el habit-check-box" style="left: 311px; top: 22px; width: 24px; height: 24px; border-radius: 8px; background-color: #ffffff; border: 1px solid #d7cfdf; overflow: hidden;" data-node-id="3:81" data-name="Seleção">
+              <div class="icon-slot habit-check-icon" style="left: 3px; top: 3px; width: 18px; height: 18px; display: none;" data-node-id="3:82" data-name="Ícone · check">
                 <img src="assets/1d291.svg" alt="" width="18" height="18" />
               </div>
             </div>
           </div>
 
-          <!-- Hábito 4: Dormir melhor (3:84) -->
-          <div class="el habit-select-card interactive-click" data-habit-id="dormir" style="left: 24px; top: 372px; width: 354px; height: 76px; border-radius: 18px; background-color: #ffffff; border: 1px solid #e9e3ee; overflow: hidden;" data-node-id="3:84" data-name="Dormir melhor">
-            <div class="el habit-symbol-bg" style="left: 12px; top: 13px; width: 46px; height: 46px; border-radius: 14px; background-color: #faf8f5;" data-node-id="3:85" data-name="Símbolo do hábito"></div>
-            <div class="icon-slot" style="left: 24px; top: 25px; width: 22px; height: 22px;" data-node-id="3:86" data-name="Ícone · moon">
+          <!-- Hábito 5: Dormir melhor (3:84) -->
+          <div class="el habit-select-card interactive-click" data-habit-id="dormir" style="left: 24px; top: 408px; width: 354px; height: 70px; border-radius: 18px; background-color: #ffffff; border: 1px solid #e9e3ee; overflow: hidden;" data-node-id="3:84" data-name="Dormir melhor">
+            <div class="el habit-symbol-bg" style="left: 12px; top: 11px; width: 46px; height: 46px; border-radius: 14px; background-color: #faf8f5;" data-node-id="3:85" data-name="Símbolo do hábito"></div>
+            <div class="icon-slot" style="left: 24px; top: 23px; width: 22px; height: 22px;" data-node-id="3:86" data-name="Ícone · moon">
               <img src="assets/14462.svg" alt="" width="22" height="22" />
             </div>
-            <p class="txt txt-nowrap fw-semibold" style="left: 71px; top: 13px; font-size: 15px; color: #292335;" data-node-id="3:88">Dormir melhor</p>
-            <p class="txt txt-nowrap fw-regular" style="left: 71px; top: 38px; font-size: 12px; color: #77717f;" data-node-id="3:89">Desacelerar antes de deitar</p>
-            <div class="el habit-check-box" style="left: 311px; top: 25px; width: 24px; height: 24px; border-radius: 8px; background-color: #ffffff; border: 1px solid #d7cfdf; overflow: hidden;" data-node-id="3:90" data-name="Seleção">
-              <div class="icon-slot habit-check-icon" style="left: 2px; top: 2px; width: 18px; height: 18px; display: none;">
+            <p class="txt txt-nowrap fw-semibold" style="left: 71px; top: 11px; font-size: 15px; color: #292335;" data-node-id="3:88">Dormir melhor</p>
+            <p class="txt txt-nowrap fw-regular" style="left: 71px; top: 36px; font-size: 12px; color: #77717f;" data-node-id="3:89">Desacelerar antes de deitar</p>
+            <div class="el habit-check-box" style="left: 311px; top: 22px; width: 24px; height: 24px; border-radius: 8px; background-color: #ffffff; border: 1px solid #d7cfdf; overflow: hidden;" data-node-id="3:90" data-name="Seleção">
+              <div class="icon-slot habit-check-icon" style="left: 3px; top: 3px; width: 18px; height: 18px; display: none;">
                 <img src="assets/1d291.svg" alt="" width="18" height="18" />
               </div>
             </div>
           </div>
 
-          <!-- Hábito 5: Parar de fumar (3:91) -->
-          <div class="el habit-select-card interactive-click" data-habit-id="fumar" style="left: 24px; top: 460px; width: 354px; height: 76px; border-radius: 18px; background-color: #ffffff; border: 1px solid #e9e3ee; overflow: hidden;" data-node-id="3:91" data-name="Cuidar da mente">
-            <div class="el habit-symbol-bg" style="left: 12px; top: 13px; width: 46px; height: 46px; border-radius: 14px; background-color: #faf8f5;" data-node-id="3:92" data-name="Símbolo do hábito"></div>
-            <div class="icon-slot" style="left: 24px; top: 25px; width: 22px; height: 22px;" data-node-id="3:93" data-name="Ícone · leaf">
+          <!-- Hábito 6: Parar de fumar (3:91) -->
+          <div class="el habit-select-card interactive-click" data-habit-id="fumar" style="left: 24px; top: 488px; width: 354px; height: 70px; border-radius: 18px; background-color: #ffffff; border: 1px solid #e9e3ee; overflow: hidden;" data-node-id="3:91" data-name="Parar de fumar">
+            <div class="el habit-symbol-bg" style="left: 12px; top: 11px; width: 46px; height: 46px; border-radius: 14px; background-color: #faf8f5;" data-node-id="3:92" data-name="Símbolo do hábito"></div>
+            <div class="icon-slot" style="left: 24px; top: 23px; width: 22px; height: 22px;" data-node-id="3:93" data-name="Ícone · leaf">
               <img src="assets/02281.svg" alt="" width="22" height="22" />
             </div>
-            <p class="txt txt-nowrap fw-semibold" style="left: 71px; top: 13px; font-size: 15px; color: #292335;" data-node-id="3:95">Parar de fumar</p>
-            <p class="txt txt-nowrap fw-regular" style="left: 71px; top: 38px; font-size: 12px; color: #77717f;" data-node-id="3:96">Interrompa hábitos não saudáveis</p>
-            <div class="el habit-check-box" style="left: 311px; top: 25px; width: 24px; height: 24px; border-radius: 8px; background-color: #ffffff; border: 1px solid #d7cfdf; overflow: hidden;" data-node-id="3:97" data-name="Seleção">
-              <div class="icon-slot habit-check-icon" style="left: 2px; top: 2px; width: 18px; height: 18px; display: none;">
+            <p class="txt txt-nowrap fw-semibold" style="left: 71px; top: 11px; font-size: 15px; color: #292335;" data-node-id="3:95">Parar de fumar</p>
+            <p class="txt txt-nowrap fw-regular" style="left: 71px; top: 36px; font-size: 12px; color: #77717f;" data-node-id="3:96">Interrompa hábitos não saudáveis</p>
+            <div class="el habit-check-box" style="left: 311px; top: 22px; width: 24px; height: 24px; border-radius: 8px; background-color: #ffffff; border: 1px solid #d7cfdf; overflow: hidden;" data-node-id="3:97" data-name="Seleção">
+              <div class="icon-slot habit-check-icon" style="left: 3px; top: 3px; width: 18px; height: 18px; display: none;">
                 <img src="assets/1d291.svg" alt="" width="18" height="18" />
               </div>
             </div>
           </div>
 
-          <div class="icon-slot" style="left: 25px; top: 570px; width: 19px; height: 19px;" data-node-id="3:98" data-name="Ícone · heart">
+          <div class="icon-slot" style="left: 25px; top: 576px; width: 19px; height: 19px;" data-node-id="3:98" data-name="Ícone · heart">
             <img src="assets/4e2ab.svg" alt="" width="19" height="19" />
           </div>
-          <p class="txt txt-nowrap fw-regular" style="left: 54px; top: 570px; font-size: 12px; color: #77717f;" data-node-id="3:100">Constância se constrói, não se cobra.</p>
+          <p class="txt txt-nowrap fw-regular" style="left: 54px; top: 576px; font-size: 12px; color: #77717f;" data-node-id="3:100">Constância se constrói, não se cobra.</p>
         </div>
 
         <!-- Navegação (3:6) -->
         <div class="section-block" style="height: 82px;" data-node-id="3:6" data-name="Navegação">
-          <div class="el interactive-click" data-goto-screen="screen-02" style="left: 24px; top: 2px; width: 354px; height: 52px; border-radius: 16px; background-color: #8fd2fa; overflow: hidden;" data-node-id="3:101" data-name="Continuar com 3 hábitos">
-            <p class="txt txt-nowrap fw-semibold" id="btn-continue-habits-text" style="left: 18px; top: 15px; font-size: 15px; color: #ffffff;" data-node-id="3:102">Continuar com 3 hábitos</p>
+          <div class="el interactive-click btn-primary-action is-disabled" id="btn-continue-to-goals" style="left: 24px; top: 2px; width: 354px; height: 52px; border-radius: 16px; background-color: #8fd2fa; overflow: hidden;" data-node-id="3:101" data-name="Continuar com hábitos">
+            <p class="txt txt-nowrap fw-semibold" id="btn-continue-habits-text" style="left: 18px; top: 15px; font-size: 15px; color: #ffffff;" data-node-id="3:102">Escolha pelo menos 1 hábito</p>
             <div class="icon-slot" style="left: 313px; top: 15px; width: 21px; height: 21px;" data-node-id="3:103" data-name="Ícone · arrow">
               <img src="assets/01030.svg" alt="" width="21" height="21" />
             </div>
@@ -252,24 +241,51 @@
     </div>
 
     <!-- =======================================================================
-         02 · Hoje (3:7)
+         02 · Suas metas (NOVA TELA — Meta Diária, Semanal e Mensal + Iniciantes)
          ======================================================================= -->
-    <div class="screen-Wrapper" id="screen-02">
-      <span class="screen-Label">02 · Hoje</span>
-      <section class="figma-Screen" data-node-id="3:7" data-name="02 · Hoje">
-        <!-- Status (3:8) -->
-        <div class="section-block" style="height: 44px;" data-node-id="3:8" data-name="Status">
-          <p class="txt txt-nowrap fw-semibold" style="left: 25px; top: 11px; font-size: 13px; color: #292335;" data-node-id="3:42">9:41</p>
-          <div class="icon-slot" style="left: 306px; top: 12px; width: 17px; height: 17px;" data-node-id="3:43" data-name="Ícone · signal">
-            <img src="assets/856b4.svg" alt="" width="17" height="17" />
-          </div>
-          <div class="icon-slot" style="left: 330px; top: 12px; width: 17px; height: 17px;" data-node-id="3:45" data-name="Ícone · wifi">
-            <img src="assets/b4ca1.svg" alt="" width="17" height="17" />
-          </div>
-          <div class="icon-slot" style="left: 353px; top: 11px; width: 23px; height: 23px;" data-node-id="3:47" data-name="Ícone · battery">
-            <img src="assets/87933.svg" alt="" width="23" height="23" />
+    <div class="screen-Wrapper" id="screen-02-goals">
+      <span class="screen-Label">02 · Suas metas</span>
+      <section class="figma-Screen" data-name="02 · Suas metas">
+
+        <!-- Cabeçalho -->
+        <div class="section-block" style="height: 150px;">
+          <p class="txt txt-nowrap fw-bold interactive-click" data-goto-screen="screen-01" style="left: 24px; top: 0px; font-size: 35px; color: #58d9e4;">Oca</p>
+          <div class="el" style="left: 258px; top: 12px; width: 120px; height: 28px; border-radius: 14px; background-color: #fab78f;"></div>
+          <p class="txt txt-nowrap fw-semibold" style="left: 268px; top: 17px; font-size: 11px; color: #e46358;">PASSO 3 DE 3</p>
+
+          <p class="txt txt-nowrap fw-semibold" style="left: 24px; top: 54px; font-size: 22px; color: #e46358;">Qual é a sua meta?</p>
+          <div class="txt fw-regular" style="left: 24px; top: 88px; width: 354px; font-size: 13px; color: #77717f;">
+            <p>Defina sua meta diária, semanal e mensal.</p>
+            <p>Preparamos uma recomendação ideal para iniciantes.</p>
           </div>
         </div>
+
+        <!-- Lista dinâmica de cards de metas para cada hábito selecionado -->
+        <div class="section-content-flex">
+          <div class="goals-ScrollContainer" id="goals-cards-container">
+            <!-- Preenchido dinamicamente pelo app.js conforme os hábitos selecionados -->
+          </div>
+        </div>
+
+        <!-- Navegação inferior -->
+        <div class="section-block" style="height: 82px;">
+          <div class="el interactive-click" id="btn-finish-goals" style="left: 24px; top: 2px; width: 354px; height: 52px; border-radius: 16px; background-color: #8fd2fa; overflow: hidden;">
+            <p class="txt txt-nowrap fw-semibold" style="left: 18px; top: 15px; font-size: 15px; color: #ffffff;">Começar minha jornada</p>
+            <div class="icon-slot" style="left: 313px; top: 15px; width: 21px; height: 21px;">
+              <img src="assets/01030.svg" alt="" width="21" height="21" />
+            </div>
+          </div>
+          <div class="el" style="left: 139px; top: 72px; width: 124px; height: 4px; border-radius: 2px; background-color: #292335;"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- =======================================================================
+         03 · Hoje (3:7) — Adaptado automaticamente aos hábitos e metas escolhidos
+         ======================================================================= -->
+    <div class="screen-Wrapper" id="screen-02">
+      <span class="screen-Label">03 · Hoje</span>
+      <section class="figma-Screen" data-node-id="3:7" data-name="03 · Hoje">
 
         <!-- Cabeçalho (3:9) -->
         <div class="section-block" style="height: 116px;" data-node-id="3:9" data-name="Cabeçalho">
@@ -286,19 +302,19 @@
         </div>
 
         <!-- Conteúdo (3:10) -->
-        <div class="section-block" style="height: 658px;" data-node-id="3:10" data-name="Conteúdo">
+        <div class="section-block" style="height: 678px;" data-node-id="3:10" data-name="Conteúdo">
           <!-- Resumo do dia (3:113) -->
           <div class="el" style="left: 24px; top: 10px; width: 354px; height: 126px; border-radius: 22px; background-color: #8fd2fa; overflow: hidden;" data-node-id="3:113" data-name="Resumo do dia">
             <div class="el" style="left: 16px; top: 14px; width: 205px; height: 28px; border-radius: 14px; background-color: #8fd2fa;" data-node-id="3:114" data-name="SEU RITMO, SEU CAMINHO"></div>
             <p class="txt txt-nowrap fw-semibold" style="left: 26px; top: 19px; font-size: 11px; color: #ffffff;" data-node-id="3:115">SEU RITMO, SEU CAMINHO</p>
-            <p class="txt txt-nowrap fw-semibold" id="today-habits-count" style="left: 16px; top: 53px; font-size: 24px; color: #ffffff;" data-node-id="3:116">2 de 3 hábitos</p>
+            <p class="txt txt-nowrap fw-semibold" id="today-habits-count" style="left: 16px; top: 53px; font-size: 24px; color: #ffffff;" data-node-id="3:116">0 de 1 hábito</p>
             <p class="txt txt-nowrap fw-regular" id="today-habits-msg" style="left: 16px; top: 90px; font-size: 11px; color: #f2eafb;" data-node-id="3:117">Um passo de cada vez. Você está indo bem!</p>
             <div class="el" style="left: 271px; top: 32px; width: 61px; height: 61px; border-radius: 30px; background-color: #ddedaa;" data-node-id="3:118" data-name="Progresso de hoje"></div>
-            <p class="txt txt-nowrap fw-semibold" id="today-habits-pct" style="left: 281px; top: 50px; font-size: 17px; color: #ffffff;" data-node-id="3:119">67%</p>
+            <p class="txt txt-nowrap fw-semibold" id="today-habits-pct" style="left: 284px; top: 50px; font-size: 17px; color: #ffffff;" data-node-id="3:119">0%</p>
           </div>
 
           <p class="txt txt-nowrap fw-semibold" style="left: 24px; top: 154px; font-size: 15px; color: #292335;" data-node-id="3:120">Sua semana</p>
-          <p class="txt txt-nowrap fw-medium interactive-click" data-goto-screen="screen-03" style="left: 141px; top: 157px; font-size: 11px; color: #8fd2fa;" data-node-id="3:121">7 dias de leitura em sequência</p>
+          <p class="txt txt-nowrap fw-medium interactive-click" id="today-streak-label" data-goto-screen="screen-03" style="left: 130px; top: 157px; font-size: 11px; color: #8fd2fa;" data-node-id="3:121">7 dias de leitura em sequência</p>
 
           <!-- Dias da semana (12 a 18) -->
           <p class="txt txt-nowrap fw-medium" style="left: 40px; top: 188px; font-size: 11px; color: #77717f;" data-node-id="3:122">Q</p>
@@ -342,57 +358,16 @@
           <p class="txt txt-nowrap fw-semibold" style="left: 343px; top: 220px; font-size: 13px; color: #ffffff;" data-node-id="3:148">18</p>
 
           <p class="txt txt-nowrap fw-semibold" style="left: 24px; top: 274px; font-size: 19px; color: #292335;" data-node-id="3:149">Seus hábitos</p>
-          <p class="txt txt-nowrap fw-semibold interactive-click" data-goto-screen="screen-01" style="left: 338px; top: 279px; font-size: 12px; color: #8fd2fa;" data-node-id="3:150">Editar</p>
+          <p class="txt txt-nowrap fw-semibold interactive-click" data-goto-screen="screen-02-goals" style="left: 266px; top: 279px; font-size: 12px; color: #e46358;">Metas</p>
+          <p class="txt txt-nowrap fw-semibold interactive-click" data-goto-screen="screen-01" style="left: 326px; top: 279px; font-size: 12px; color: #8fd2fa;" data-node-id="3:150">Hábitos</p>
 
-          <!-- Card Hábito 1: Ler um pouco (3:151) -->
-          <div class="el today-habit-card interactive-click is-done" data-done="true" style="left: 24px; top: 312px; width: 354px; height: 72px; border-radius: 18px; background-color: #ffffff; border: 1px solid #e9e3ee; overflow: hidden;" data-node-id="3:151" data-name="Ler um pouco">
-            <div class="el" style="left: 11px; top: 12px; width: 46px; height: 46px; border-radius: 14px; background-color: #eee7fa;" data-node-id="3:152" data-name="Ícone do hábito"></div>
-            <div class="icon-slot" style="left: 24px; top: 24px; width: 21px; height: 21px;" data-node-id="3:153" data-name="Ícone · book">
-              <img src="assets/158dd.svg" alt="" width="21" height="21" />
-            </div>
-            <p class="txt txt-nowrap fw-semibold" style="left: 70px; top: 12px; font-size: 14px; color: #292335;" data-node-id="3:155">Ler um pouco</p>
-            <p class="txt txt-nowrap fw-regular" style="left: 70px; top: 38px; font-size: 11px; color: #77717f;" data-node-id="3:156">15 min · 7 dias seguidos</p>
-            <div class="el today-checkin-btn" style="left: 302px; top: 17px; width: 36px; height: 36px; border-radius: 12px; background-color: #ddedaa; overflow: hidden;" data-node-id="3:157" data-name="Concluído">
-              <div class="icon-slot" style="left: 8px; top: 8px; width: 20px; height: 20px;" data-node-id="3:158" data-name="Ícone · check">
-                <img class="checkin-icon-img" src="assets/c1c8a.svg" alt="" width="20" height="20" />
-              </div>
-            </div>
-          </div>
+          <!-- Container dinâmico dos hábitos escolhidos para Hoje -->
+          <div id="today-habits-list-container"></div>
 
-          <!-- Card Hábito 2: Beber água (3:160) -->
-          <div class="el today-habit-card interactive-click is-done" data-done="true" style="left: 24px; top: 394px; width: 354px; height: 72px; border-radius: 18px; background-color: #ffffff; border: 1px solid #e9e3ee; overflow: hidden;" data-node-id="3:160" data-name="Beber água">
-            <div class="el" style="left: 11px; top: 12px; width: 46px; height: 46px; border-radius: 14px; background-color: #e8f0fc;" data-node-id="3:161" data-name="Ícone do hábito"></div>
-            <div class="icon-slot" style="left: 24px; top: 24px; width: 21px; height: 21px;" data-node-id="3:162" data-name="Ícone · drop">
-              <img src="assets/95b63.svg" alt="" width="21" height="21" />
-            </div>
-            <p class="txt txt-nowrap fw-semibold" style="left: 70px; top: 12px; font-size: 14px; color: #292335;" data-node-id="3:164">Beber água</p>
-            <p class="txt txt-nowrap fw-regular" style="left: 70px; top: 38px; font-size: 11px; color: #77717f;" data-node-id="3:165">8 copos · meta de hoje</p>
-            <div class="el today-checkin-btn" style="left: 302px; top: 17px; width: 36px; height: 36px; border-radius: 12px; background-color: #ddedaa; overflow: hidden;" data-node-id="3:166" data-name="Concluído">
-              <div class="icon-slot" style="left: 8px; top: 8px; width: 20px; height: 20px;" data-node-id="3:167" data-name="Ícone · check">
-                <img class="checkin-icon-img" src="assets/c1c8a.svg" alt="" width="20" height="20" />
-              </div>
-            </div>
-          </div>
-
-          <!-- Card Hábito 3: Movimentar o corpo (3:169) -->
-          <div class="el today-habit-card interactive-click" data-done="false" style="left: 24px; top: 476px; width: 354px; height: 72px; border-radius: 18px; background-color: #ffffff; border: 1px solid #e9e3ee; overflow: hidden;" data-node-id="3:169" data-name="Movimentar o corpo">
-            <div class="el" style="left: 11px; top: 12px; width: 46px; height: 46px; border-radius: 14px; background-color: #f6ead8;" data-node-id="3:170" data-name="Ícone do hábito"></div>
-            <div class="icon-slot" style="left: 24px; top: 24px; width: 21px; height: 21px;" data-node-id="3:171" data-name="Ícone · walk">
-              <img src="assets/593cc.svg" alt="" width="21" height="21" />
-            </div>
-            <p class="txt txt-nowrap fw-semibold" style="left: 70px; top: 12px; font-size: 14px; color: #292335;" data-node-id="3:174">Movimentar o corpo</p>
-            <p class="txt txt-nowrap fw-regular today-habit-sub" style="left: 70px; top: 38px; font-size: 11px; color: #77717f;" data-node-id="3:175">20 min · ainda dá tempo</p>
-            <div class="el today-checkin-btn" style="left: 302px; top: 17px; width: 36px; height: 36px; border-radius: 12px; background-color: #eee7fa; overflow: hidden;" data-node-id="3:176" data-name="Registrar check-in">
-              <div class="icon-slot" style="left: 8px; top: 8px; width: 20px; height: 20px;" data-node-id="3:177" data-name="Ícone · plus">
-                <img class="checkin-icon-img" src="assets/a16a6.svg" alt="" width="20" height="20" />
-              </div>
-            </div>
-          </div>
-
-          <!-- Incentivo da comunidade (3:179) -->
-          <div class="el interactive-click" data-goto-screen="screen-05" style="left: 24px; top: 578px; width: 354px; height: 64px; border-radius: 18px; background-color: #ddedaa; overflow: hidden;" data-node-id="3:179" data-name="Incentivo da comunidade">
-            <p class="txt txt-nowrap fw-semibold" style="left: 15px; top: 11px; font-size: 13px; color: #292335;" data-node-id="3:180">Juntos é mais leve</p>
-            <p class="txt txt-nowrap fw-regular" style="left: 15px; top: 35px; font-size: 11px; color: #77717f;" data-node-id="3:181">23 pessoas do seu grupo já leram hoje.</p>
+          <!-- Incentivo da comunidade (3:179) — adaptado ao hábito -->
+          <div class="el interactive-click" id="today-community-card" data-goto-screen="screen-05" style="left: 24px; top: 578px; width: 354px; height: 64px; border-radius: 18px; background-color: #ddedaa; overflow: hidden;" data-node-id="3:179" data-name="Incentivo da comunidade">
+            <p class="txt txt-nowrap fw-semibold" id="today-community-title" style="left: 15px; top: 11px; font-size: 13px; color: #292335;" data-node-id="3:180">Juntos é mais leve</p>
+            <p class="txt txt-nowrap fw-regular" id="today-community-sub" style="left: 15px; top: 35px; font-size: 11px; color: #77717f;" data-node-id="3:181">23 pessoas do seu grupo já leram hoje.</p>
             <div class="icon-slot" style="left: 311px; top: 21px; width: 23px; height: 23px;" data-node-id="3:182" data-name="Ícone · users">
               <img src="assets/d7016.svg" alt="" width="23" height="23" />
             </div>
@@ -428,24 +403,11 @@
     </div>
 
     <!-- =======================================================================
-         03 · Meu progresso (3:12)
+         04 · Meu progresso (3:12) — Adaptado ao hábito escolhido e suas metas
          ======================================================================= -->
     <div class="screen-Wrapper" id="screen-03">
-      <span class="screen-Label">03 · Meu progresso</span>
-      <section class="figma-Screen" data-node-id="3:12" data-name="03 · Meu progresso">
-        <!-- Status (3:13) -->
-        <div class="section-block" style="height: 44px;" data-node-id="3:13" data-name="Status">
-          <p class="txt txt-nowrap fw-semibold" style="left: 25px; top: 11px; font-size: 13px; color: #292335;" data-node-id="3:201">9:41</p>
-          <div class="icon-slot" style="left: 306px; top: 12px; width: 17px; height: 17px;" data-node-id="3:202" data-name="Ícone · signal">
-            <img src="assets/856b4.svg" alt="" width="17" height="17" />
-          </div>
-          <div class="icon-slot" style="left: 330px; top: 12px; width: 17px; height: 17px;" data-node-id="3:204" data-name="Ícone · wifi">
-            <img src="assets/b4ca1.svg" alt="" width="17" height="17" />
-          </div>
-          <div class="icon-slot" style="left: 353px; top: 11px; width: 23px; height: 23px;" data-node-id="3:206" data-name="Ícone · battery">
-            <img src="assets/87933.svg" alt="" width="23" height="23" />
-          </div>
-        </div>
+      <span class="screen-Label">04 · Meu progresso</span>
+      <section class="figma-Screen" data-node-id="3:12" data-name="04 · Meu progresso">
 
         <!-- Cabeçalho (3:14) -->
         <div class="section-block" style="height: 116px;" data-node-id="3:14" data-name="Cabeçalho">
@@ -462,29 +424,29 @@
         </div>
 
         <!-- Conteúdo (3:15) -->
-        <div class="section-block" style="height: 658px;" data-node-id="3:15" data-name="Conteúdo">
+        <div class="section-block" style="height: 678px;" data-node-id="3:15" data-name="Conteúdo">
           <!-- Métrica 1: check-ins (3:223) -->
           <div class="el" style="left: 24px; top: 8px; width: 112px; height: 85px; border-radius: 17px; background-color: #ffffff; border: 1px solid #e9e3ee; overflow: hidden;" data-node-id="3:223" data-name="check-ins">
             <p class="txt txt-nowrap fw-semibold" id="stat-checkins" style="left: 12px; top: 13px; font-size: 25px; color: #292335;" data-node-id="3:224">16</p>
             <p class="txt txt-nowrap fw-regular" style="left: 12px; top: 53px; font-size: 11px; color: #77717f;" data-node-id="3:225">check-ins</p>
           </div>
 
-          <!-- Métrica 2: de leitura (3:226) -->
+          <!-- Métrica 2: adaptada ao hábito principal (3:226) -->
           <div class="el" style="left: 145px; top: 8px; width: 112px; height: 85px; border-radius: 17px; background-color: #eee7fa; overflow: hidden;" data-node-id="3:226" data-name="de leitura">
             <p class="txt txt-nowrap fw-semibold" id="stat-reading" style="left: 13px; top: 14px; font-size: 25px; color: #8fd2fa;" data-node-id="3:227">7 dias</p>
-            <p class="txt txt-nowrap fw-regular" style="left: 13px; top: 54px; font-size: 11px; color: #77717f;" data-node-id="3:228">de leitura</p>
+            <p class="txt txt-nowrap fw-regular" id="stat-reading-label" style="left: 13px; top: 54px; font-size: 11px; color: #77717f;" data-node-id="3:228">de leitura</p>
           </div>
 
           <!-- Métrica 3: da meta (3:229) -->
           <div class="el" style="left: 266px; top: 8px; width: 112px; height: 85px; border-radius: 17px; background-color: #ffffff; border: 1px solid #e9e3ee; overflow: hidden;" data-node-id="3:229" data-name="da meta">
             <p class="txt txt-nowrap fw-semibold" id="stat-goal" style="left: 12px; top: 13px; font-size: 25px; color: #292335;" data-node-id="3:230">76%</p>
-            <p class="txt txt-nowrap fw-regular" style="left: 12px; top: 53px; font-size: 11px; color: #77717f;" data-node-id="3:231">da meta</p>
+            <p class="txt txt-nowrap fw-regular" id="stat-goal-label" style="left: 12px; top: 53px; font-size: 11px; color: #77717f;" data-node-id="3:231">da meta</p>
           </div>
 
           <!-- Gráfico de hábitos concluídos (3:232) -->
-          <div class="el" style="left: 17px; top: 118px; width: 354px; height: 211px; border-radius: 20px; background-color: #ffffff; border: 1px solid #e9e3ee; overflow: hidden;" data-node-id="3:232" data-name="Gráfico de hábitos concluídos">
-            <p class="txt txt-nowrap fw-semibold" style="left: 15px; top: 14px; font-size: 14px; color: #292335;" data-node-id="3:233">Hábitos concluídos</p>
-            <p class="txt txt-nowrap fw-regular" style="left: 15px; top: 38px; font-size: 11px; color: #77717f;" data-node-id="3:234">12 a 18 de novembro</p>
+          <div class="el" style="left: 24px; top: 110px; width: 354px; height: 211px; border-radius: 20px; background-color: #ffffff; border: 1px solid #e9e3ee; overflow: hidden;" data-node-id="3:232" data-name="Gráfico de hábitos concluídos">
+            <p class="txt txt-nowrap fw-semibold" id="progress-chart-title" style="left: 15px; top: 14px; font-size: 14px; color: #292335;" data-node-id="3:233">Hábitos concluídos</p>
+            <p class="txt txt-nowrap fw-regular" id="progress-chart-subtitle" style="left: 15px; top: 38px; font-size: 11px; color: #77717f;" data-node-id="3:234">12 a 18 de novembro</p>
             <div class="el" style="left: 239px; top: 17px; width: 99px; height: 28px; border-radius: 14px; background-color: #eee7fa;" data-node-id="3:235" data-name="Esta semana"></div>
             <p class="txt txt-nowrap fw-semibold" style="left: 249px; top: 22px; font-size: 11px; color: #e46358;" data-node-id="3:236">Esta semana</p>
 
@@ -519,13 +481,13 @@
             <p class="txt txt-nowrap fw-medium" style="left: 298px; top: 182px; font-size: 10px; color: #77717f;" data-node-id="3:256">Q</p>
           </div>
 
-          <!-- Calendário de leitura (3:257) -->
-          <div class="el" style="left: 24px; top: 338px; width: 354px; height: 239px; border-radius: 20px; background-color: #ffffff; border: 1px solid #e9e3ee; overflow: hidden;" data-node-id="3:257" data-name="Calendário de leitura">
-            <p class="txt txt-nowrap fw-semibold" style="left: 15px; top: 15px; font-size: 14px; color: #292335;" data-node-id="3:258">Leitura · novembro</p>
-            <div class="icon-slot interactive-click" data-toast="Exibindo novembro" style="left: 281px; top: 17px; width: 17px; height: 17px;" data-node-id="3:259" data-name="Ícone · left">
+          <!-- Calendário do hábito selecionado (3:257) -->
+          <div class="el" style="left: 24px; top: 334px; width: 354px; height: 239px; border-radius: 20px; background-color: #ffffff; border: 1px solid #e9e3ee; overflow: hidden;" data-node-id="3:257" data-name="Calendário de hábito">
+            <p class="txt txt-nowrap fw-semibold" id="calendar-habit-title" style="left: 15px; top: 15px; font-size: 14px; color: #292335;" data-node-id="3:258">Leitura · novembro</p>
+            <div class="icon-slot interactive-click" id="btn-prev-habit-cal" title="Alternar hábito" style="left: 281px; top: 17px; width: 17px; height: 17px;" data-node-id="3:259" data-name="Ícone · left">
               <img src="assets/99c27.svg" alt="" width="17" height="17" />
             </div>
-            <div class="icon-slot interactive-click" data-toast="Exibindo novembro" style="left: 314px; top: 17px; width: 17px; height: 17px;" data-node-id="3:261" data-name="Ícone · right">
+            <div class="icon-slot interactive-click" id="btn-next-habit-cal" title="Alternar hábito" style="left: 314px; top: 17px; width: 17px; height: 17px;" data-node-id="3:261" data-name="Ícone · right">
               <img src="assets/98389.svg" alt="" width="17" height="17" />
             </div>
 
@@ -538,57 +500,57 @@
             <p class="txt txt-nowrap fw-medium" style="left: 297px; top: 53px; font-size: 10px; color: #77717f;" data-node-id="3:269">S</p>
 
             <!-- Row 1: 1..7 -->
-            <div class="el" style="left: 14px; top: 76px; width: 29px; height: 26px; border-radius: 9px; background-color: #eee7fa;" data-node-id="3:270" data-name="Leitura registrada · dia 1"></div>
+            <div class="el" style="left: 14px; top: 76px; width: 29px; height: 26px; border-radius: 9px; background-color: #eee7fa;" data-node-id="3:270"></div>
             <p class="txt txt-center fw-semibold" style="left: 28.5px; top: 80px; width: 29px; font-size: 11px; color: #8fd2fa;" data-node-id="3:271">1</p>
 
             <p class="txt txt-center fw-regular" style="left: 74.5px; top: 80px; width: 29px; font-size: 11px; color: #77717f;" data-node-id="3:272">2</p>
 
-            <div class="el" style="left: 106px; top: 76px; width: 29px; height: 26px; border-radius: 9px; background-color: #eee7fa;" data-node-id="3:273" data-name="Leitura registrada · dia 3"></div>
+            <div class="el" style="left: 106px; top: 76px; width: 29px; height: 26px; border-radius: 9px; background-color: #eee7fa;" data-node-id="3:273"></div>
             <p class="txt txt-center fw-semibold" style="left: 120.5px; top: 80px; width: 29px; font-size: 11px; color: #8fd2fa;" data-node-id="3:274">3</p>
 
-            <div class="el" style="left: 152px; top: 76px; width: 29px; height: 26px; border-radius: 9px; background-color: #eee7fa;" data-node-id="3:275" data-name="Leitura registrada · dia 4"></div>
+            <div class="el" style="left: 152px; top: 76px; width: 29px; height: 26px; border-radius: 9px; background-color: #eee7fa;" data-node-id="3:275"></div>
             <p class="txt txt-center fw-semibold" style="left: 166.5px; top: 80px; width: 29px; font-size: 11px; color: #8fd2fa;" data-node-id="3:276">4</p>
 
             <p class="txt txt-center fw-regular" style="left: 212.5px; top: 80px; width: 29px; font-size: 11px; color: #77717f;" data-node-id="3:277">5</p>
 
-            <div class="el" style="left: 244px; top: 76px; width: 29px; height: 26px; border-radius: 9px; background-color: #eee7fa;" data-node-id="3:278" data-name="Leitura registrada · dia 6"></div>
+            <div class="el" style="left: 244px; top: 76px; width: 29px; height: 26px; border-radius: 9px; background-color: #eee7fa;" data-node-id="3:278"></div>
             <p class="txt txt-center fw-semibold" style="left: 258.5px; top: 80px; width: 29px; font-size: 11px; color: #8fd2fa;" data-node-id="3:279">6</p>
 
-            <div class="el" style="left: 290px; top: 76px; width: 29px; height: 26px; border-radius: 9px; background-color: #eee7fa;" data-node-id="3:280" data-name="Leitura registrada · dia 7"></div>
+            <div class="el" style="left: 290px; top: 76px; width: 29px; height: 26px; border-radius: 9px; background-color: #eee7fa;" data-node-id="3:280"></div>
             <p class="txt txt-center fw-semibold" style="left: 304.5px; top: 80px; width: 29px; font-size: 11px; color: #8fd2fa;" data-node-id="3:281">7</p>
 
             <!-- Row 2: 8..14 -->
-            <div class="el" style="left: 14px; top: 105px; width: 29px; height: 26px; border-radius: 9px; background-color: #eee7fa;" data-node-id="3:282" data-name="Leitura registrada · dia 8"></div>
+            <div class="el" style="left: 14px; top: 105px; width: 29px; height: 26px; border-radius: 9px; background-color: #eee7fa;" data-node-id="3:282"></div>
             <p class="txt txt-center fw-semibold" style="left: 28.5px; top: 109px; width: 29px; font-size: 11px; color: #8fd2fa;" data-node-id="3:283">8</p>
 
-            <div class="el" style="left: 60px; top: 105px; width: 29px; height: 26px; border-radius: 9px; background-color: #eee7fa;" data-node-id="3:284" data-name="Leitura registrada · dia 9"></div>
+            <div class="el" style="left: 60px; top: 105px; width: 29px; height: 26px; border-radius: 9px; background-color: #eee7fa;" data-node-id="3:284"></div>
             <p class="txt txt-center fw-semibold" style="left: 74.5px; top: 109px; width: 29px; font-size: 11px; color: #8fd2fa;" data-node-id="3:285">9</p>
 
-            <div class="el" style="left: 106px; top: 105px; width: 29px; height: 26px; border-radius: 9px; background-color: #eee7fa;" data-node-id="3:286" data-name="Leitura registrada · dia 10"></div>
+            <div class="el" style="left: 106px; top: 105px; width: 29px; height: 26px; border-radius: 9px; background-color: #eee7fa;" data-node-id="3:286"></div>
             <p class="txt txt-center fw-semibold" style="left: 120.5px; top: 109px; width: 29px; font-size: 11px; color: #8fd2fa;" data-node-id="3:287">10</p>
 
             <p class="txt txt-center fw-regular" style="left: 166.5px; top: 109px; width: 29px; font-size: 11px; color: #77717f;" data-node-id="3:288">11</p>
 
-            <div class="el" style="left: 198px; top: 105px; width: 29px; height: 26px; border-radius: 9px; background-color: #eee7fa;" data-node-id="3:289" data-name="Leitura registrada · dia 12"></div>
+            <div class="el" style="left: 198px; top: 105px; width: 29px; height: 26px; border-radius: 9px; background-color: #eee7fa;" data-node-id="3:289"></div>
             <p class="txt txt-center fw-semibold" style="left: 212.5px; top: 109px; width: 29px; font-size: 11px; color: #8fd2fa;" data-node-id="3:290">12</p>
 
-            <div class="el" style="left: 244px; top: 105px; width: 29px; height: 26px; border-radius: 9px; background-color: #eee7fa;" data-node-id="3:291" data-name="Leitura registrada · dia 13"></div>
+            <div class="el" style="left: 244px; top: 105px; width: 29px; height: 26px; border-radius: 9px; background-color: #eee7fa;" data-node-id="3:291"></div>
             <p class="txt txt-center fw-semibold" style="left: 258.5px; top: 109px; width: 29px; font-size: 11px; color: #8fd2fa;" data-node-id="3:292">13</p>
 
-            <div class="el" style="left: 290px; top: 105px; width: 29px; height: 26px; border-radius: 9px; background-color: #eee7fa;" data-node-id="3:293" data-name="Leitura registrada · dia 14"></div>
+            <div class="el" style="left: 290px; top: 105px; width: 29px; height: 26px; border-radius: 9px; background-color: #eee7fa;" data-node-id="3:293"></div>
             <p class="txt txt-center fw-semibold" style="left: 304.5px; top: 109px; width: 29px; font-size: 11px; color: #8fd2fa;" data-node-id="3:294">14</p>
 
             <!-- Row 3: 15..21 -->
-            <div class="el" style="left: 14px; top: 134px; width: 29px; height: 26px; border-radius: 9px; background-color: #eee7fa;" data-node-id="3:295" data-name="Leitura registrada · dia 15"></div>
+            <div class="el" style="left: 14px; top: 134px; width: 29px; height: 26px; border-radius: 9px; background-color: #eee7fa;" data-node-id="3:295"></div>
             <p class="txt txt-center fw-semibold" style="left: 28.5px; top: 138px; width: 29px; font-size: 11px; color: #8fd2fa;" data-node-id="3:296">15</p>
 
-            <div class="el" style="left: 60px; top: 134px; width: 29px; height: 26px; border-radius: 9px; background-color: #eee7fa;" data-node-id="3:297" data-name="Leitura registrada · dia 16"></div>
+            <div class="el" style="left: 60px; top: 134px; width: 29px; height: 26px; border-radius: 9px; background-color: #eee7fa;" data-node-id="3:297"></div>
             <p class="txt txt-center fw-semibold" style="left: 74.5px; top: 138px; width: 29px; font-size: 11px; color: #8fd2fa;" data-node-id="3:298">16</p>
 
-            <div class="el" style="left: 106px; top: 134px; width: 29px; height: 26px; border-radius: 9px; background-color: #eee7fa;" data-node-id="3:299" data-name="Leitura registrada · dia 17"></div>
+            <div class="el" style="left: 106px; top: 134px; width: 29px; height: 26px; border-radius: 9px; background-color: #eee7fa;" data-node-id="3:299"></div>
             <p class="txt txt-center fw-semibold" style="left: 120.5px; top: 138px; width: 29px; font-size: 11px; color: #8fd2fa;" data-node-id="3:300">17</p>
 
-            <div class="el" style="left: 152px; top: 134px; width: 29px; height: 26px; border-radius: 9px; background-color: #8fd2fa;" data-node-id="3:301" data-name="Leitura registrada · dia 18"></div>
+            <div class="el" style="left: 152px; top: 134px; width: 29px; height: 26px; border-radius: 9px; background-color: #8fd2fa;" data-node-id="3:301"></div>
             <p class="txt txt-center fw-semibold" style="left: 166.5px; top: 138px; width: 29px; font-size: 11px; color: #ffffff;" data-node-id="3:302">18</p>
 
             <p class="txt txt-center fw-regular" style="left: 212.5px; top: 138px; width: 29px; font-size: 11px; color: #aba6ae;" data-node-id="3:303">19</p>
@@ -609,9 +571,9 @@
             <p class="txt txt-center fw-regular" style="left: 74.5px; top: 196px; width: 29px; font-size: 11px; color: #aba6ae;" data-node-id="3:314">30</p>
           </div>
 
-          <!-- Mensagem de progresso (3:315) -->
-          <div class="el" style="left: 24px; top: 594px; width: 354px; height: 49px; border-radius: 15px; background-color: #ddedaa; overflow: hidden;" data-node-id="3:315" data-name="Mensagem de progresso">
-            <p class="txt txt-nowrap fw-medium" style="left: 14px; top: 16px; font-size: 12px; color: #292335;" data-node-id="3:316">Cada registro conta. Continue no seu ritmo.</p>
+          <!-- Mensagem de progresso (3:315) — adaptada às metas -->
+          <div class="el" style="left: 24px; top: 590px; width: 354px; height: 54px; border-radius: 15px; background-color: #ddedaa; overflow: hidden;" data-node-id="3:315" data-name="Mensagem de progresso">
+            <p class="txt fw-medium" id="progress-footer-msg" style="left: 14px; top: 10px; width: 326px; font-size: 11.5px; color: #292335;" data-node-id="3:316">Cada registro conta. Continue no seu ritmo.</p>
           </div>
         </div>
 
@@ -644,24 +606,11 @@
     </div>
 
     <!-- =======================================================================
-         04 · Comunidades (3:17)
+         05 · Comunidades (3:17) — Adaptada aos hábitos escolhidos
          ======================================================================= -->
     <div class="screen-Wrapper" id="screen-04">
-      <span class="screen-Label">04 · Comunidades</span>
-      <section class="figma-Screen" data-node-id="3:17" data-name="04 · Comunidades">
-        <!-- Status (3:18) -->
-        <div class="section-block" style="height: 44px;" data-node-id="3:18" data-name="Status">
-          <p class="txt txt-nowrap fw-semibold" style="left: 25px; top: 11px; font-size: 13px; color: #292335;" data-node-id="3:209">9:41</p>
-          <div class="icon-slot" style="left: 306px; top: 12px; width: 17px; height: 17px;" data-node-id="3:210" data-name="Ícone · signal">
-            <img src="assets/856b4.svg" alt="" width="17" height="17" />
-          </div>
-          <div class="icon-slot" style="left: 330px; top: 12px; width: 17px; height: 17px;" data-node-id="3:212" data-name="Ícone · wifi">
-            <img src="assets/b4ca1.svg" alt="" width="17" height="17" />
-          </div>
-          <div class="icon-slot" style="left: 353px; top: 11px; width: 23px; height: 23px;" data-node-id="3:214" data-name="Ícone · battery">
-            <img src="assets/87933.svg" alt="" width="23" height="23" />
-          </div>
-        </div>
+      <span class="screen-Label">05 · Comunidades</span>
+      <section class="figma-Screen" data-node-id="3:17" data-name="05 · Comunidades">
 
         <!-- Cabeçalho (3:19) -->
         <div class="section-block" style="height: 116px;" data-node-id="3:19" data-name="Cabeçalho">
@@ -677,7 +626,7 @@
         </div>
 
         <!-- Conteúdo (3:20) -->
-        <div class="section-block" style="height: 658px;" data-node-id="3:20" data-name="Conteúdo">
+        <div class="section-block" style="height: 678px;" data-node-id="3:20" data-name="Conteúdo">
           <!-- Buscar comunidades (3:338) -->
           <div class="el" style="left: 24px; top: 6px; width: 354px; height: 46px; border-radius: 14px; background-color: #ffffff; border: 1px solid #e9e3ee; overflow: hidden;" data-node-id="3:338" data-name="Buscar comunidades">
             <div class="icon-slot" style="left: 13px; top: 12px; width: 20px; height: 20px;" data-node-id="3:339" data-name="Ícone · search">
@@ -686,24 +635,24 @@
             <input type="text" class="search-input-el" id="community-search-input" placeholder="Qual hábito conecta você?" aria-label="Buscar comunidades" data-node-id="3:342" />
           </div>
 
-          <!-- Filtros: Descobrir / Minhas (3) / Desafios -->
+          <!-- Filtros: Descobrir / Minhas / Desafios -->
           <div class="el comm-filter-pill interactive-click" data-filter="descobrir" style="left: 24px; top: 66px; width: 94px; height: 28px; border-radius: 14px; background-color: #8fd2fa;" data-node-id="3:343" data-name="Descobrir"></div>
           <p class="txt txt-nowrap fw-semibold comm-filter-text" data-filter="descobrir" style="left: 34px; top: 71px; font-size: 11px; color: #ffffff; pointer-events: none;" data-node-id="3:344">Descobrir</p>
 
-          <div class="el comm-filter-pill interactive-click" data-filter="minhas" style="left: 126px; top: 66px; width: 105px; height: 28px; border-radius: 14px; background-color: #ffffff;" data-node-id="3:345" data-name="Minhas (3)"></div>
-          <p class="txt txt-nowrap fw-semibold comm-filter-text" data-filter="minhas" style="left: 136px; top: 71px; font-size: 11px; color: #77717f; pointer-events: none;" data-node-id="3:346">Minhas (3)</p>
+          <div class="el comm-filter-pill interactive-click" data-filter="minhas" style="left: 126px; top: 66px; width: 105px; height: 28px; border-radius: 14px; background-color: #ffffff;" data-node-id="3:345" data-name="Minhas"></div>
+          <p class="txt txt-nowrap fw-semibold comm-filter-text" id="comm-my-count-tab" data-filter="minhas" style="left: 136px; top: 71px; font-size: 11px; color: #77717f; pointer-events: none;" data-node-id="3:346">Minhas (1)</p>
 
           <div class="el comm-filter-pill interactive-click" data-filter="desafios" style="left: 239px; top: 66px; width: 94px; height: 28px; border-radius: 14px; background-color: #ffffff;" data-node-id="3:347" data-name="Desafios"></div>
           <p class="txt txt-nowrap fw-semibold comm-filter-text" data-filter="desafios" style="left: 249px; top: 71px; font-size: 11px; color: #77717f; pointer-events: none;" data-node-id="3:348">Desafios</p>
 
-          <!-- Destaque da semana (3:349) -->
+          <!-- Destaque da semana (3:349) — adaptado ao hábito -->
           <div class="el interactive-click" data-goto-screen="screen-05" style="left: 24px; top: 113px; width: 354px; height: 134px; border-radius: 22px; background-color: #ddedaa; overflow: hidden;" data-node-id="3:349" data-name="Destaque da semana">
             <p class="txt txt-nowrap fw-bold" style="left: 16px; top: 15px; font-size: 9px; color: #415229;" data-node-id="3:350">DESAFIO DA SEMANA</p>
-            <div class="txt txt-nowrap fw-semibold" style="left: 16px; top: 36px; font-size: 22px; color: #292335;" data-node-id="3:351">
+            <div class="txt txt-nowrap fw-semibold" id="comm-featured-title" style="left: 16px; top: 36px; font-size: 22px; color: #292335;" data-node-id="3:351">
               <p>7 dias de</p>
               <p>pequenas vitórias</p>
             </div>
-            <p class="txt txt-nowrap fw-regular" style="left: 16px; top: 106px; font-size: 11px; color: #415229;" data-node-id="3:352">128 pessoas cultivando constância</p>
+            <p class="txt txt-nowrap fw-regular" id="comm-featured-sub" style="left: 16px; top: 106px; font-size: 11px; color: #415229;" data-node-id="3:352">128 pessoas cultivando constância</p>
             <div class="icon-slot" style="left: 275px; top: 45px; width: 47px; height: 47px;" data-node-id="3:560" data-name="Ícone · leaf">
               <img src="assets/44482.svg" alt="" width="47" height="47" />
             </div>
@@ -711,50 +660,8 @@
 
           <p class="txt txt-nowrap fw-semibold" style="left: 24px; top: 268px; font-size: 17px; color: #e46358;" data-node-id="3:354">Uma comunidade para cada passo</p>
 
-          <!-- Comunidade 1: Eu leio antes de dormir (3:355) -->
-          <div class="el community-item-card interactive-click" data-goto-screen="screen-05" data-comm-name="eu leio antes de dormir leitura livro" style="left: 24px; top: 306px; width: 354px; height: 98px; border-radius: 18px; background-color: #ffffff; border: 1px solid #e9e3ee; overflow: hidden;" data-node-id="3:355" data-name="Eu leio antes de dormir">
-            <div class="el" style="left: 11px; top: 13px; width: 60px; height: 66px; border-radius: 16px; background-color: #eee7fa;" data-node-id="3:356" data-name="Identidade da comunidade"></div>
-            <p class="txt fw-semibold" style="left: 84px; top: 11px; width: 250px; font-size: 14px; color: #292335;" data-node-id="3:358">Eu leio antes de dormir</p>
-            <p class="txt txt-nowrap fw-regular" style="left: 84px; top: 35px; font-size: 10px; color: #77717f;" data-node-id="3:359">1,2 mil membros · 23 lendo hoje</p>
-            <div class="el" style="left: 84px; top: 59px; width: 109px; height: 28px; border-radius: 14px; background-color: #eee7fa;" data-node-id="3:360" data-name="Participando"></div>
-            <p class="txt txt-nowrap fw-semibold" style="left: 94px; top: 64px; font-size: 11px; color: #8fd2fa;" data-node-id="3:361">Participando</p>
-            <div class="icon-slot" style="left: 318px; top: 65px; width: 16px; height: 16px;" data-node-id="3:362" data-name="Ícone · right">
-              <img src="assets/5c2f5.svg" alt="" width="16" height="16" />
-            </div>
-            <div class="icon-slot" style="left: 28px; top: 32px; width: 28px; height: 28px;" data-node-id="3:553" data-name="Ícone · book">
-              <img src="assets/9ae2f.svg" alt="" width="28" height="28" />
-            </div>
-          </div>
-
-          <!-- Comunidade 2: Só mais uma voltinha (3:364) -->
-          <div class="el community-item-card interactive-click" data-comm-name="so mais uma voltinha caminhada corpo" style="left: 24px; top: 416px; width: 354px; height: 98px; border-radius: 18px; background-color: #ffffff; border: 1px solid #e9e3ee; overflow: hidden;" data-node-id="3:364" data-name="Só mais uma voltinha">
-            <div class="el" style="left: 11px; top: 13px; width: 60px; height: 66px; border-radius: 16px; background-color: #f9e9d3;" data-node-id="3:365" data-name="Identidade da comunidade"></div>
-            <p class="txt fw-semibold" style="left: 84px; top: 11px; width: 250px; font-size: 14px; color: #292335;" data-node-id="3:367">Só mais uma voltinha</p>
-            <p class="txt txt-nowrap fw-regular" style="left: 84px; top: 35px; font-size: 10px; color: #77717f;" data-node-id="3:368">864 membros · 12 caminhando</p>
-            <div class="el comm-join-bg" style="left: 84px; top: 59px; width: 90px; height: 28px; border-radius: 14px; background-color: #faf8f5;" data-node-id="3:369" data-name="Conhecer"></div>
-            <p class="txt txt-nowrap fw-semibold comm-join-txt" style="left: 94px; top: 64px; font-size: 11px; color: #77717f;" data-node-id="3:370">Conhecer</p>
-            <div class="icon-slot" style="left: 318px; top: 65px; width: 16px; height: 16px;" data-node-id="3:371" data-name="Ícone · right">
-              <img src="assets/5c2f5.svg" alt="" width="16" height="16" />
-            </div>
-            <div class="icon-slot" style="left: 28px; top: 32px; width: 28px; height: 28px;" data-node-id="3:555" data-name="Ícone · walk">
-              <img src="assets/9d542.svg" alt="" width="28" height="28" />
-            </div>
-          </div>
-
-          <!-- Comunidade 3: Não é sede, é lembrete (3:373) -->
-          <div class="el community-item-card interactive-click" data-comm-name="nao e sede e lembrete agua beber" style="left: 24px; top: 526px; width: 354px; height: 98px; border-radius: 18px; background-color: #ffffff; border: 1px solid #e9e3ee; overflow: hidden;" data-node-id="3:373" data-name="Não é sede, é lembrete">
-            <div class="el" style="left: 11px; top: 13px; width: 60px; height: 66px; border-radius: 16px; background-color: #e4edf8;" data-node-id="3:374" data-name="Identidade da comunidade"></div>
-            <p class="txt fw-semibold" style="left: 84px; top: 11px; width: 250px; font-size: 14px; color: #292335;" data-node-id="3:376">Não é sede, é lembrete</p>
-            <p class="txt txt-nowrap fw-regular" style="left: 84px; top: 35px; font-size: 10px; color: #77717f;" data-node-id="3:377">2,3 mil membros · dicas e incentivo</p>
-            <div class="el comm-join-bg" style="left: 84px; top: 59px; width: 90px; height: 28px; border-radius: 14px; background-color: #faf8f5;" data-node-id="3:378" data-name="Conhecer"></div>
-            <p class="txt txt-nowrap fw-semibold comm-join-txt" style="left: 94px; top: 64px; font-size: 11px; color: #77717f;" data-node-id="3:379">Conhecer</p>
-            <div class="icon-slot" style="left: 318px; top: 65px; width: 16px; height: 16px;" data-node-id="3:380" data-name="Ícone · right">
-              <img src="assets/5c2f5.svg" alt="" width="16" height="16" />
-            </div>
-            <div class="icon-slot" style="left: 28px; top: 32px; width: 28px; height: 28px;" data-node-id="3:558" data-name="Ícone · drop">
-              <img src="assets/c40b0.svg" alt="" width="28" height="28" />
-            </div>
-          </div>
+          <!-- Lista dinâmica de comunidades priorizando os hábitos escolhidos -->
+          <div id="communities-list-container"></div>
 
           <p class="txt txt-nowrap fw-regular" style="left: 24px; top: 642px; font-size: 11px; color: #77717f;" data-node-id="3:382">Seus interesses encontram companhia por aqui.</p>
         </div>
@@ -788,24 +695,11 @@
     </div>
 
     <!-- =======================================================================
-         05 · Comunidade de leitura (3:22)
+         06 · Comunidade (3:22) — Adaptada automaticamente ao hábito selecionado
          ======================================================================= -->
     <div class="screen-Wrapper" id="screen-05">
-      <span class="screen-Label">05 · Comunidade de leitura</span>
-      <section class="figma-Screen" data-node-id="3:22" data-name="05 · Comunidade de leitura">
-        <!-- Status (3:23) -->
-        <div class="section-block" style="height: 44px;" data-node-id="3:23" data-name="Status">
-          <p class="txt txt-nowrap fw-semibold" style="left: 25px; top: 11px; font-size: 13px; color: #292335;" data-node-id="3:399">9:41</p>
-          <div class="icon-slot" style="left: 306px; top: 12px; width: 17px; height: 17px;" data-node-id="3:400" data-name="Ícone · signal">
-            <img src="assets/856b4.svg" alt="" width="17" height="17" />
-          </div>
-          <div class="icon-slot" style="left: 330px; top: 12px; width: 17px; height: 17px;" data-node-id="3:402" data-name="Ícone · wifi">
-            <img src="assets/b4ca1.svg" alt="" width="17" height="17" />
-          </div>
-          <div class="icon-slot" style="left: 353px; top: 11px; width: 23px; height: 23px;" data-node-id="3:404" data-name="Ícone · battery">
-            <img src="assets/87933.svg" alt="" width="23" height="23" />
-          </div>
-        </div>
+      <span class="screen-Label">06 · Comunidade</span>
+      <section class="figma-Screen" data-node-id="3:22" data-name="06 · Comunidade">
 
         <!-- Cabeçalho (3:24) -->
         <div class="section-block" style="height: 116px;" data-node-id="3:24" data-name="Cabeçalho">
@@ -813,7 +707,7 @@
           <div class="icon-slot interactive-click" data-goto-screen="screen-04" style="left: 34px; top: 22px; width: 18px; height: 18px;" data-node-id="3:416" data-name="Ícone · back">
             <img src="assets/e943b.svg" alt="" width="18" height="18" />
           </div>
-          <p class="txt txt-nowrap fw-semibold" style="left: 76px; top: 16px; font-size: 18px; color: #e46358;" data-node-id="3:418">Comunidade</p>
+          <p class="txt txt-nowrap fw-semibold" id="active-comm-header-title" style="left: 76px; top: 16px; font-size: 18px; color: #e46358;" data-node-id="3:418">Comunidade</p>
           <div class="icon-slot interactive-click" data-toast="Opções da comunidade" style="left: 350px; top: 24px; width: 22px; height: 22px;" data-node-id="3:419" data-name="Ícone · more">
             <img src="assets/9eeed.svg" alt="" width="22" height="22" />
           </div>
@@ -821,26 +715,26 @@
         </div>
 
         <!-- Conteúdo (3:25) -->
-        <div class="section-block" style="height: 658px;" data-node-id="3:25" data-name="Conteúdo">
-          <!-- Banner Eu leio antes de dormir (3:424) -->
-          <div class="el" style="left: 24px; top: 0px; width: 354px; height: 151px; border-radius: 22px; background-color: #8fd2fa; overflow: hidden;" data-node-id="3:424" data-name="Eu leio antes de dormir">
-            <div class="txt txt-nowrap fw-semibold" style="left: 18px; top: 18px; font-size: 25px; color: #ffffff;" data-node-id="3:425">
+        <div class="section-block" style="height: 678px;" data-node-id="3:25" data-name="Conteúdo">
+          <!-- Banner da Comunidade (3:424) -->
+          <div class="el" style="left: 24px; top: 0px; width: 354px; height: 151px; border-radius: 22px; background-color: #8fd2fa; overflow: hidden;" data-node-id="3:424">
+            <div class="txt txt-nowrap fw-semibold" id="active-comm-banner-title" style="left: 18px; top: 18px; font-size: 25px; color: #ffffff;" data-node-id="3:425">
               <p>Eu leio antes</p>
               <p>de dormir</p>
             </div>
             <div class="el" style="left: 269px; top: 20px; width: 66px; height: 66px; border-radius: 19px; background-color: #ddedaa;" data-node-id="3:426" data-name="Símbolo da comunidade"></div>
-            <div class="icon-slot" style="left: 284px; top: 35px; width: 36px; height: 36px;" data-node-id="3:427" data-name="Ícone · book">
-              <img src="assets/9b8d4.svg" alt="" width="36" height="36" />
+            <div class="icon-slot" style="left: 284px; top: 35px; width: 36px; height: 36px;" data-node-id="3:427">
+              <img id="active-comm-banner-icon" src="assets/9b8d4.svg" alt="" width="36" height="36" />
             </div>
-            <p class="txt txt-nowrap fw-regular" style="left: 18px; top: 94px; font-size: 11px; color: #f4eefe;" data-node-id="3:429">1,2 mil membros · comunidade pública</p>
-            <div class="el interactive-click" id="comm-member-status-bg" style="left: 18px; top: 115px; width: 124px; height: 28px; border-radius: 14px; background-color: #e9dff8;" data-node-id="3:430" data-name="✓ Participando"></div>
+            <p class="txt txt-nowrap fw-regular" id="active-comm-banner-members" style="left: 18px; top: 94px; font-size: 11px; color: #f4eefe;" data-node-id="3:429">1,2 mil membros · comunidade pública</p>
+            <div class="el interactive-click" id="comm-member-status-bg" style="left: 18px; top: 115px; width: 124px; height: 28px; border-radius: 14px; background-color: #e9dff8;" data-node-id="3:430"></div>
             <p class="txt txt-nowrap fw-semibold" id="comm-member-status-txt" style="left: 28px; top: 120px; font-size: 11px; color: #8fd2fa; pointer-events: none;" data-node-id="3:431">✓ Participando</p>
           </div>
 
           <!-- Desafio coletivo (3:432) -->
           <div class="el" style="left: 24px; top: 167px; width: 354px; height: 94px; border-radius: 19px; background-color: #ddedaa; overflow: hidden;" data-node-id="3:432" data-name="Desafio coletivo">
             <p class="txt txt-nowrap fw-bold" style="left: 15px; top: 12px; font-size: 9px; color: #415229;" data-node-id="3:433">DESAFIO COLETIVO</p>
-            <p class="txt txt-nowrap fw-semibold" style="left: 15px; top: 32px; font-size: 16px; color: #292335;" data-node-id="3:434">7 noites, 7 páginas</p>
+            <p class="txt txt-nowrap fw-semibold" id="active-comm-challenge-title" style="left: 15px; top: 32px; font-size: 16px; color: #292335;" data-node-id="3:434">7 noites, 7 páginas</p>
             <div class="el interactive-click" id="btn-join-challenge-bg" style="left: 251px; top: 18px; width: 88px; height: 28px; border-radius: 14px; background-color: #ffffff;" data-node-id="3:435" data-name="Participar"></div>
             <p class="txt txt-nowrap fw-semibold" id="btn-join-challenge-txt" style="left: 261px; top: 23px; font-size: 11px; color: #415229; pointer-events: none;" data-node-id="3:436">Participar</p>
             <p class="txt txt-nowrap fw-regular" id="challenge-participants-txt" style="left: 15px; top: 64px; font-size: 11px; color: #415229;" data-node-id="3:437">128 participantes · começa segunda</p>
@@ -850,9 +744,9 @@
           <div class="el" id="mural-tab-pill" style="left: 24px; top: 279px; width: 74px; height: 28px; border-radius: 14px; background-color: #8fd2fa;" data-node-id="3:438" data-name="Mural"></div>
           <p class="txt txt-nowrap fw-semibold interactive-click" style="left: 34px; top: 284px; font-size: 11px; color: #ffffff;" data-node-id="3:439">Mural</p>
           <p class="txt txt-nowrap fw-medium interactive-click" data-toast="Aba Dicas da comunidade" style="left: 124px; top: 286px; font-size: 12px; color: #77717f;" data-node-id="3:440">Dicas</p>
-          <p class="txt txt-nowrap fw-medium interactive-click" data-toast="Comunidade pública dedicada ao hábito de leitura noturna" style="left: 191px; top: 286px; font-size: 12px; color: #77717f;" data-node-id="3:441">Sobre</p>
+          <p class="txt txt-nowrap fw-medium interactive-click" data-toast="Comunidade pública dedicada ao cultivo do seu hábito" style="left: 191px; top: 286px; font-size: 12px; color: #77717f;" data-node-id="3:441">Sobre</p>
 
-          <!-- Publicação de Camila (3:442) -->
+          <!-- Publicação de Camila (3:442) — adaptada ao hábito -->
           <div class="el" style="left: 24px; top: 318px; width: 354px; height: 274px; border-radius: 20px; background-color: #ffffff; border: 1px solid #e9e3ee; overflow: hidden;" data-node-id="3:442" data-name="Publicação de Camila">
             <div class="avatar-slot" style="left: 15px; top: 15px; width: 38px; height: 38px;" data-node-id="3:33" data-name="Retrato de Camila">
               <img src="assets/49bd5.png" alt="Camila Souza" width="38" height="38" />
@@ -863,7 +757,7 @@
               <img src="assets/20702.svg" alt="" width="18" height="18" />
             </div>
 
-            <div class="txt fw-regular" style="left: 15px; top: 69px; width: 322px; font-size: 14px; color: #292335;" data-node-id="3:449">
+            <div class="txt fw-regular" id="active-comm-post-body" style="left: 15px; top: 69px; width: 322px; font-size: 14px; color: #292335;" data-node-id="3:449">
               <p>Hoje li só 5 páginas, mas troquei o celular</p>
               <p>pelo livro antes de dormir. Pequenas</p>
               <p>vitórias também são vitórias, né?</p>
@@ -933,24 +827,11 @@
     </div>
 
     <!-- =======================================================================
-         06 · Meu perfil (3:27)
+         07 · Meu perfil (3:27) — Hábitos e metas cultivados dinamicamente
          ======================================================================= -->
     <div class="screen-Wrapper" id="screen-06">
-      <span class="screen-Label">06 · Meu perfil</span>
-      <section class="figma-Screen" data-node-id="3:27" data-name="06 · Meu perfil">
-        <!-- Status (3:28) -->
-        <div class="section-block" style="height: 44px;" data-node-id="3:28" data-name="Status">
-          <p class="txt txt-nowrap fw-semibold" style="left: 25px; top: 11px; font-size: 13px; color: #292335;" data-node-id="3:407">9:41</p>
-          <div class="icon-slot" style="left: 306px; top: 12px; width: 17px; height: 17px;" data-node-id="3:408" data-name="Ícone · signal">
-            <img src="assets/856b4.svg" alt="" width="17" height="17" />
-          </div>
-          <div class="icon-slot" style="left: 330px; top: 12px; width: 17px; height: 17px;" data-node-id="3:410" data-name="Ícone · wifi">
-            <img src="assets/b4ca1.svg" alt="" width="17" height="17" />
-          </div>
-          <div class="icon-slot" style="left: 353px; top: 11px; width: 23px; height: 23px;" data-node-id="3:412" data-name="Ícone · battery">
-            <img src="assets/87933.svg" alt="" width="23" height="23" />
-          </div>
-        </div>
+      <span class="screen-Label">07 · Meu perfil</span>
+      <section class="figma-Screen" data-node-id="3:27" data-name="07 · Meu perfil">
 
         <!-- Cabeçalho (3:29) -->
         <div class="section-block" style="height: 116px;" data-node-id="3:29" data-name="Cabeçalho">
@@ -963,41 +844,24 @@
         </div>
 
         <!-- Conteúdo (3:30) -->
-        <div class="section-block" style="height: 658px;" data-node-id="3:30" data-name="Conteúdo">
+        <div class="section-block" style="height: 678px;" data-node-id="3:30" data-name="Conteúdo">
           <!-- Sua jornada (3:483) -->
           <div class="el" style="left: 24px; top: 4px; width: 354px; height: 80px; border-radius: 20px; background-color: #eee7fa; overflow: hidden;" data-node-id="3:483" data-name="Sua jornada">
             <p class="txt txt-nowrap fw-semibold" style="left: 18px; top: 11px; font-size: 25px; color: #8fd2fa;" data-node-id="3:484">7</p>
             <p class="txt txt-nowrap fw-regular" style="left: 18px; top: 49px; font-size: 10px; color: #77717f;" data-node-id="3:485">dias seguidos</p>
 
-            <p class="txt txt-nowrap fw-semibold" id="profile-habits-count" style="left: 134px; top: 11px; font-size: 25px; color: #8fd2fa;" data-node-id="3:486">3</p>
+            <p class="txt txt-nowrap fw-semibold" id="profile-habits-count" style="left: 134px; top: 11px; font-size: 25px; color: #8fd2fa;" data-node-id="3:486">1</p>
             <p class="txt txt-nowrap fw-regular" style="left: 134px; top: 49px; font-size: 10px; color: #77717f;" data-node-id="3:487">hábitos</p>
 
-            <p class="txt txt-nowrap fw-semibold" style="left: 250px; top: 11px; font-size: 25px; color: #8fd2fa;" data-node-id="3:488">3</p>
+            <p class="txt txt-nowrap fw-semibold" id="profile-comm-count" style="left: 250px; top: 11px; font-size: 25px; color: #8fd2fa;" data-node-id="3:488">1</p>
             <p class="txt txt-nowrap fw-regular" style="left: 250px; top: 49px; font-size: 10px; color: #77717f;" data-node-id="3:489">comunidades</p>
           </div>
 
           <p class="txt txt-nowrap fw-semibold" style="left: 24px; top: 105px; font-size: 17px; color: #e46358;" data-node-id="3:490">O que estou cultivando</p>
+          <p class="txt txt-nowrap fw-semibold interactive-click" data-goto-screen="screen-02-goals" style="left: 298px; top: 109px; font-size: 11px; color: #8fd2fa;">Editar metas</p>
 
-          <!-- Hábitos acompanhados (3:491) -->
-          <div class="el interactive-click" data-goto-screen="screen-01" style="left: 24px; top: 143px; width: 354px; height: 148px; border-radius: 20px; background-color: #ffffff; border: 1px solid #e9e3ee; overflow: hidden;" data-node-id="3:491" data-name="Hábitos acompanhados">
-            <div class="icon-slot" style="left: 15px; top: 15px; width: 20px; height: 20px;" data-node-id="3:492" data-name="Ícone · book">
-              <img src="assets/07fc4.svg" alt="" width="20" height="20" />
-            </div>
-            <p class="txt txt-nowrap fw-medium" style="left: 48px; top: 16px; font-size: 12px; color: #292335;" data-node-id="3:494">Ler um pouco</p>
-            <p class="txt txt-nowrap fw-regular" style="left: 236px; top: 18px; font-size: 10px; color: #77717f;" data-node-id="3:495">15 min por dia</p>
-
-            <div class="icon-slot" style="left: 15px; top: 58px; width: 20px; height: 20px;" data-node-id="3:496" data-name="Ícone · drop">
-              <img src="assets/d60ea.svg" alt="" width="20" height="20" />
-            </div>
-            <p class="txt txt-nowrap fw-medium" style="left: 48px; top: 59px; font-size: 12px; color: #292335;" data-node-id="3:498">Beber água</p>
-            <p class="txt txt-nowrap fw-regular" style="left: 236px; top: 61px; font-size: 10px; color: #77717f;" data-node-id="3:499">8 copos por dia</p>
-
-            <div class="icon-slot" style="left: 15px; top: 101px; width: 20px; height: 20px;" data-node-id="3:500" data-name="Ícone · walk">
-              <img src="assets/38691.svg" alt="" width="20" height="20" />
-            </div>
-            <p class="txt txt-nowrap fw-medium" style="left: 48px; top: 102px; font-size: 12px; color: #292335;" data-node-id="3:503">Movimentar o corpo</p>
-            <p class="txt txt-nowrap fw-regular" style="left: 236px; top: 104px; font-size: 10px; color: #77717f;" data-node-id="3:504">20 min por dia</p>
-          </div>
+          <!-- Hábitos acompanhados (3:491) — preenchido dinamicamente -->
+          <div class="el interactive-click" id="profile-habits-box" data-goto-screen="screen-02-goals" style="left: 24px; top: 143px; width: 354px; height: 148px; border-radius: 20px; background-color: #ffffff; border: 1px solid #e9e3ee; overflow: hidden;" data-node-id="3:491" data-name="Hábitos acompanhados"></div>
 
           <p class="txt txt-nowrap fw-semibold" style="left: 24px; top: 312px; font-size: 18px; color: #e46358;" data-node-id="3:505">Do seu jeito</p>
 
@@ -1015,7 +879,7 @@
           </div>
 
           <!-- Privacidade dos registros (3:514) -->
-          <div class="el interactive-click" data-toast="Seus registros estão protegidos e privados por padrão" style="left: 24px; top: 470px; width: 354px; height: 100px; border-radius: 20px; background-color: #ffffff; border: 1px solid #e9e3ee; overflow: hidden;" data-node-id="3:514" data-name="Privacidade dos registros">
+          <div class="el interactive-click" id="card-open-privacy" style="left: 24px; top: 470px; width: 354px; height: 100px; border-radius: 20px; background-color: #ffffff; border: 1px solid #e9e3ee; overflow: hidden;" data-node-id="3:514" data-name="Privacidade dos registros">
             <div class="icon-slot" style="left: 15px; top: 16px; width: 22px; height: 22px;" data-node-id="3:515" data-name="Ícone · lock">
               <img src="assets/7bb1c.svg" alt="" width="22" height="22" />
             </div>
@@ -1029,7 +893,7 @@
             </div>
           </div>
 
-          <p class="txt txt-nowrap fw-semibold interactive-click" data-toast="Central de privacidade e exportação de dados" style="left: 24px; top: 594px; font-size: 12px; color: #8fd2fa;" data-node-id="3:522">Gerenciar dados e privacidade</p>
+          <p class="txt txt-nowrap fw-semibold interactive-click" id="profile-link-privacy" style="left: 24px; top: 594px; font-size: 12px; color: #8fd2fa;" data-node-id="3:522">Gerenciar dados e privacidade</p>
           <p class="txt txt-nowrap fw-regular" style="left: 24px; top: 622px; font-size: 11px; color: #77717f;" data-node-id="3:523">Cuidar de você também é proteger seus dados.</p>
         </div>
 
@@ -1062,6 +926,37 @@
     </div>
 
   </main>
+
+  <!-- Modal de Termos de Uso e Política de Privacidade -->
+  <div class="terms-ModalBackdrop" id="terms-modal" role="dialog" aria-modal="true" aria-labelledby="terms-modal-title">
+    <div class="terms-ModalCard">
+      <div class="terms-ModalHeader">
+        <h3 class="terms-ModalTitle" id="terms-modal-title">Termos de Uso e Privacidade</h3>
+        <button type="button" class="terms-ModalClose" id="btn-close-terms-x" aria-label="Fechar">✕</button>
+      </div>
+      <div class="terms-ModalBody" id="terms-modal-body">
+        <h4>1. Bem-vindo(a) à Oca</h4>
+        <p>A Oca é um espaço pensado para ajudar você a cultivar bons hábitos no seu próprio ritmo, com acolhimento, privacidade e boas companhias.</p>
+
+        <h4>2. Privacidade por Padrão</h4>
+        <p>Todos os seus registros de hábitos, horários, metas diárias, semanais e mensais são <strong>privados por padrão</strong>. Nenhuma atividade é publicada nas comunidades sem a sua ação explícita.</p>
+
+        <h4>3. Uso das Comunidades</h4>
+        <p>As comunidades e desafios coletivos têm caráter de apoio mútuo e gentileza. Não cobramos desempenho: celebramos a constância e as pequenas conquistas.</p>
+
+        <h4>4. Controle sobre seus Dados (LGPD)</h4>
+        <p>Você pode editar, exportar ou excluir seu perfil e histórico de registros a qualquer momento na aba <em>Perfil → Gerenciar dados e privacidade</em>.</p>
+
+        <p style="font-size: 11px; color: #e46358; background: #eee7fa; padding: 8px 10px; border-radius: 10px;">
+          Documento provisório · Assim que você enviar o texto definitivo da política, ele será inserido integralmente aqui.
+        </p>
+      </div>
+      <div class="terms-ModalFooter">
+        <button type="button" class="terms-BtnSecondary" id="btn-close-terms">Fechar</button>
+        <button type="button" class="terms-BtnPrimary" id="btn-accept-terms">Li e concordo</button>
+      </div>
+    </div>
+  </div>
 
   <div class="proto-Toast" id="proto-toast" role="status" aria-live="polite"></div>
 
