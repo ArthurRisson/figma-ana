@@ -18,6 +18,10 @@
       commCardBg: '#eee7fa',
       beginnerTip: 'Para iniciantes: 15 minutos (ou 5 páginas) antes de dormir criam o hábito sem cansar.',
       dailyUnit: 'min por dia',
+      shortUnit: 'min',
+      progressQuestion: 'Quanto tempo você leu hoje?',
+      verbPast: 'leu',
+      quickChips: [5, 10, 15, 20, 30],
       dailyStep: 5,
       dailyMin: 5,
       dailyMax: 120,
@@ -63,7 +67,11 @@
       commCardBg: '#e4edf8',
       beginnerTip: 'Para iniciantes: 1 bloco de 30 minutos de foco sem celular rende mais que horas distraído.',
       dailyUnit: 'min por dia',
-      dailyStep: 10,
+      shortUnit: 'min',
+      progressQuestion: 'Quanto tempo você estudou hoje?',
+      verbPast: 'estudou',
+      quickChips: [10, 15, 20, 30, 45],
+      dailyStep: 5,
       dailyMin: 15,
       dailyMax: 240,
       weeklyUnit: 'dias por semana',
@@ -108,6 +116,10 @@
       commCardBg: '#e4edf8',
       beginnerTip: 'Para iniciantes: comece com 6 copos (1,5L) deixando uma garrafinha sempre visível por perto.',
       dailyUnit: 'copos por dia',
+      shortUnit: 'copos',
+      progressQuestion: 'Quantos copos de água você bebeu hoje?',
+      verbPast: 'bebeu',
+      quickChips: [1, 2, 3, 4, 6],
       dailyStep: 1,
       dailyMin: 4,
       dailyMax: 16,
@@ -153,6 +165,10 @@
       commCardBg: '#f9e9d3',
       beginnerTip: 'Para iniciantes: 20 minutos de caminhada leve 3x na semana já despertam sua disposição.',
       dailyUnit: 'min por dia',
+      shortUnit: 'min',
+      progressQuestion: 'Quantos minutos você se movimentou hoje?',
+      verbPast: 'se movimentou',
+      quickChips: [10, 15, 20, 30, 45],
       dailyStep: 5,
       dailyMin: 10,
       dailyMax: 120,
@@ -197,7 +213,11 @@
       todayBoxBg: '#eee7fa',
       commCardBg: '#eee7fa',
       beginnerTip: 'Para iniciantes: desacelerar e deixar as telas de lado 30 min antes de deitar transforma seu sono.',
-      dailyUnit: 'min sem telas antes',
+      dailyUnit: 'min sem telas',
+      shortUnit: 'min',
+      progressQuestion: 'Quanto tempo você desacelerou / dormiu melhor hoje?',
+      verbPast: 'desacelerou',
+      quickChips: [10, 15, 20, 30, 45],
       dailyStep: 10,
       dailyMin: 15,
       dailyMax: 120,
@@ -243,6 +263,10 @@
       commCardBg: '#ddedaa',
       beginnerTip: 'Para iniciantes: celebre cada pausa consciente e cada dia livre. Um dia de cada vez é o segredo.',
       dailyUnit: 'pausas de respiro/dia',
+      shortUnit: 'pausas',
+      progressQuestion: 'Quantas pausas conscientes sem fumar você fez hoje?',
+      verbPast: 'venceu',
+      quickChips: [1, 2, 3, 4, 5],
       dailyStep: 1,
       dailyMin: 1,
       dailyMax: 15,
@@ -282,13 +306,14 @@
   const state = {
     selectedHabits: [], // Começa vazio (em branco) na tela 01
     habitGoals: {},     // { [habitId]: { preset: 'iniciante', daily, weekly, monthly } }
-    todayDone: {},      // { [habitId]: boolean }
+    todayAmount: {},    // { [habitId]: number } -> quantidade realizada hoje (ex: 20 min)
+    todayDone: {},      // { [habitId]: boolean } -> true quando todayAmount >= daily
+    modalActiveHabitId: 'leitura',
     activeCommunityHabitId: 'leitura',
     calendarHabitIdx: 0,
     extraJoinedCommunities: new Set()
   };
 
-  // Inicializa metas padrão (Iniciante Recomendado) para todos os hábitos
   Object.keys(HABIT_CATALOG).forEach((id) => {
     const def = HABIT_CATALOG[id].presets.iniciante;
     state.habitGoals[id] = {
@@ -297,10 +322,10 @@
       weekly: def.weekly,
       monthly: def.monthly
     };
+    state.todayAmount[id] = 0;
     state.todayDone[id] = false;
   });
 
-  // Retorna os hábitos ativos (ou ['leitura'] como fallback caso o usuário pule direto pelas abas do topo)
   function getActiveHabits() {
     return state.selectedHabits.length > 0 ? state.selectedHabits : ['leitura'];
   }
@@ -308,6 +333,13 @@
   function getPrimaryHabit() {
     const active = getActiveHabits();
     return HABIT_CATALOG[active[0]] || HABIT_CATALOG.leitura;
+  }
+
+  function getHabitTodayPct(habitId) {
+    const g = state.habitGoals[habitId];
+    const amt = state.todayAmount[habitId] || 0;
+    if (!g || g.daily <= 0) return 0;
+    return Math.min(100, Math.round((amt / g.daily) * 100));
   }
 
   // =========================================================================
@@ -328,13 +360,12 @@
     if (toastTimer) clearTimeout(toastTimer);
     toastTimer = setTimeout(() => {
       toastEl.classList.remove('is-visible');
-    }, 2500);
+    }, 2600);
   }
 
   function goToScreen(screenId) {
     if (!screenId) return;
 
-    // Sempre sincroniza as telas dependentes antes de exibir
     if (screenId === 'screen-02-goals') {
       renderGoalsScreen();
     } else if (
@@ -454,7 +485,6 @@
     });
   }
 
-  // Modal de Termos de Uso e Política de Privacidade
   const termsModal = document.getElementById('terms-modal');
   const linkOpenTerms = document.getElementById('link-open-terms');
   const linkOpenPrivacy = document.getElementById('link-open-privacy');
@@ -584,6 +614,7 @@
 
       if (state.selectedHabits.length > 0) {
         state.activeCommunityHabitId = state.selectedHabits[0];
+        state.modalActiveHabitId = state.selectedHabits[0];
         state.calendarHabitIdx = 0;
       }
 
@@ -649,7 +680,6 @@
             </div>
 
             <div class="goal-RowsList">
-              <!-- Meta Diária -->
               <div class="goal-FreqRow">
                 <div class="goal-FreqInfo">
                   <span class="goal-FreqLabel">Meta Diária</span>
@@ -661,7 +691,6 @@
                 </div>
               </div>
 
-              <!-- Meta Semanal -->
               <div class="goal-FreqRow">
                 <div class="goal-FreqInfo">
                   <span class="goal-FreqLabel">Meta Semanal</span>
@@ -673,7 +702,6 @@
                 </div>
               </div>
 
-              <!-- Meta Mensal -->
               <div class="goal-FreqRow">
                 <div class="goal-FreqInfo">
                   <span class="goal-FreqLabel">Meta Mensal</span>
@@ -690,7 +718,6 @@
       })
       .join('');
 
-    // Wire preset buttons
     goalsContainer.querySelectorAll('[data-preset-habit]').forEach((btn) => {
       btn.addEventListener('click', () => {
         const habitId = btn.getAttribute('data-preset-habit');
@@ -704,12 +731,12 @@
           weekly: h.presets[level].weekly,
           monthly: h.presets[level].monthly
         };
+        state.todayDone[habitId] = (state.todayAmount[habitId] || 0) >= state.habitGoals[habitId].daily;
         renderGoalsScreen();
         syncAllDynamicScreens();
       });
     });
 
-    // Wire stepper buttons (- / +)
     goalsContainer.querySelectorAll('[data-step-habit]').forEach((btn) => {
       btn.addEventListener('click', () => {
         const habitId = btn.getAttribute('data-step-habit');
@@ -727,6 +754,7 @@
           g.monthly = Math.max(4, Math.min(30, g.monthly + dir));
         }
         g.preset = 'personalizado';
+        state.todayDone[habitId] = (state.todayAmount[habitId] || 0) >= g.daily;
         renderGoalsScreen();
         syncAllDynamicScreens();
       });
@@ -738,6 +766,199 @@
       syncAllDynamicScreens();
       goToScreen('screen-02');
       showToast('Suas metas foram configuradas com sucesso!');
+    });
+  }
+
+  // =========================================================================
+  // Modal "Adicionar Progresso" (Contabilizar quanto leu, estudou, bebeu, dormiu)
+  // =========================================================================
+  const progressModal = document.getElementById('progress-modal');
+  const btnOpenAddProgress = document.getElementById('btn-open-add-progress');
+  const btnCloseProgressX = document.getElementById('btn-close-progress-x');
+  const progHabitTabs = document.getElementById('prog-habit-tabs');
+  const progQuestionTitle = document.getElementById('prog-question-title');
+  const progQuestionGoal = document.getElementById('prog-question-goal');
+  const progAmountInput = document.getElementById('prog-amount-input');
+  const progUnitBadge = document.getElementById('prog-unit-badge');
+  const progQuickChips = document.getElementById('prog-quick-chips');
+  const progPreviewText = document.getElementById('prog-preview-text');
+  const progPreviewPct = document.getElementById('prog-preview-pct');
+  const progPreviewBar = document.getElementById('prog-preview-bar');
+  const btnResetProgress = document.getElementById('btn-reset-progress');
+  const btnSaveProgress = document.getElementById('btn-save-progress');
+
+  function openProgressModal(preselectHabitId) {
+    const activeHabits = getActiveHabits();
+    if (preselectHabitId && activeHabits.includes(preselectHabitId)) {
+      state.modalActiveHabitId = preselectHabitId;
+    } else if (!activeHabits.includes(state.modalActiveHabitId)) {
+      state.modalActiveHabitId = activeHabits[0];
+    }
+
+    renderProgressModalContent();
+    if (progressModal) {
+      progressModal.classList.add('is-open');
+    }
+    if (progAmountInput) {
+      progAmountInput.value = '';
+      setTimeout(() => progAmountInput.focus(), 60);
+    }
+  }
+
+  function closeProgressModal() {
+    if (progressModal) {
+      progressModal.classList.remove('is-open');
+    }
+  }
+
+  function updateModalLivePreview() {
+    const habitId = state.modalActiveHabitId;
+    const h = HABIT_CATALOG[habitId];
+    const g = state.habitGoals[habitId];
+    if (!h || !g) return;
+
+    const currentAmt = state.todayAmount[habitId] || 0;
+    const typedAmt = progAmountInput ? Math.max(0, Number(progAmountInput.value) || 0) : 0;
+    const projectedTotal = currentAmt + typedAmt;
+    const projectedPct = Math.min(100, Math.round((projectedTotal / g.daily) * 100));
+
+    if (progPreviewText) {
+      progPreviewText.textContent =
+        typedAmt > 0
+          ? `Novo total hoje: ${projectedTotal} de ${g.daily} ${h.shortUnit} (+${typedAmt} ${h.shortUnit})`
+          : `Total registrado hoje: ${currentAmt} de ${g.daily} ${h.shortUnit}`;
+    }
+    if (progPreviewPct) {
+      progPreviewPct.textContent = `${projectedPct}%`;
+    }
+    if (progPreviewBar) {
+      progPreviewBar.style.width = `${projectedPct}%`;
+      progPreviewBar.classList.toggle('is-complete', projectedPct >= 100);
+    }
+  }
+
+  function renderProgressModalContent() {
+    const activeHabits = getActiveHabits();
+    const habitId = state.modalActiveHabitId;
+    const h = HABIT_CATALOG[habitId] || getPrimaryHabit();
+    const g = state.habitGoals[habitId];
+    const currentAmt = state.todayAmount[habitId] || 0;
+
+    if (progHabitTabs) {
+      progHabitTabs.innerHTML = activeHabits
+        .map((id) => {
+          const item = HABIT_CATALOG[id];
+          const isAct = id === habitId;
+          return `
+            <button type="button" class="prog-HabitTabBtn ${isAct ? 'is-active' : ''}" data-modal-habit="${id}">
+              <img src="${item.iconSelect}" alt="" width="16" height="16" />
+              <span>${item.title}</span>
+            </button>
+          `;
+        })
+        .join('');
+
+      progHabitTabs.querySelectorAll('[data-modal-habit]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          state.modalActiveHabitId = btn.getAttribute('data-modal-habit');
+          if (progAmountInput) progAmountInput.value = '';
+          renderProgressModalContent();
+        });
+      });
+    }
+
+    if (progQuestionTitle) {
+      progQuestionTitle.textContent = h.progressQuestion;
+    }
+    if (progQuestionGoal) {
+      progQuestionGoal.textContent = `Meta diária: ${g.daily} ${h.dailyUnit} · Já lançado hoje: ${currentAmt} ${h.shortUnit}`;
+    }
+    if (progUnitBadge) {
+      progUnitBadge.textContent = h.shortUnit;
+    }
+    if (progAmountInput) {
+      progAmountInput.placeholder = `Digite em ${h.shortUnit} (ex: ${h.quickChips[2] || 20})`;
+    }
+
+    if (progQuickChips) {
+      progQuickChips.innerHTML = h.quickChips
+        .map(
+          (val) =>
+            `<button type="button" class="prog-ChipBtn" data-chip-val="${val}">+${val} ${h.shortUnit}</button>`
+        )
+        .join('');
+
+      progQuickChips.querySelectorAll('[data-chip-val]').forEach((chip) => {
+        chip.addEventListener('click', () => {
+          const addVal = Number(chip.getAttribute('data-chip-val')) || 0;
+          if (progAmountInput) {
+            const curInput = Number(progAmountInput.value) || 0;
+            progAmountInput.value = String(curInput + addVal);
+            updateModalLivePreview();
+          }
+        });
+      });
+    }
+
+    updateModalLivePreview();
+  }
+
+  function saveLoggedProgress() {
+    const habitId = state.modalActiveHabitId;
+    const h = HABIT_CATALOG[habitId];
+    const g = state.habitGoals[habitId];
+    if (!h || !g) return;
+
+    const typedAmt = progAmountInput ? Math.max(0, Number(progAmountInput.value) || 0) : 0;
+    if (typedAmt <= 0) {
+      showToast(`Digite quanto você ${h.verbPast} hoje em ${h.shortUnit}.`);
+      if (progAmountInput) progAmountInput.focus();
+      return;
+    }
+
+    state.todayAmount[habitId] = (state.todayAmount[habitId] || 0) + typedAmt;
+    state.todayDone[habitId] = state.todayAmount[habitId] >= g.daily;
+
+    const newPct = getHabitTodayPct(habitId);
+    closeProgressModal();
+    syncAllDynamicScreens();
+    showToast(
+      `+${typedAmt} ${h.shortUnit} em ${h.title}! Progresso de hoje: ${state.todayAmount[habitId]}/${g.daily} ${h.shortUnit} (${newPct}%)`
+    );
+  }
+
+  function resetHabitProgressToday() {
+    const habitId = state.modalActiveHabitId;
+    const h = HABIT_CATALOG[habitId];
+    state.todayAmount[habitId] = 0;
+    state.todayDone[habitId] = false;
+    if (progAmountInput) progAmountInput.value = '';
+    renderProgressModalContent();
+    syncAllDynamicScreens();
+    showToast(`Progresso de hoje em ${h ? h.title : 'hábito'} zerado.`);
+  }
+
+  if (btnOpenAddProgress) {
+    btnOpenAddProgress.addEventListener('click', () => openProgressModal());
+  }
+  if (btnCloseProgressX) {
+    btnCloseProgressX.addEventListener('click', closeProgressModal);
+  }
+  if (progAmountInput) {
+    progAmountInput.addEventListener('input', updateModalLivePreview);
+    progAmountInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') saveLoggedProgress();
+    });
+  }
+  if (btnSaveProgress) {
+    btnSaveProgress.addEventListener('click', saveLoggedProgress);
+  }
+  if (btnResetProgress) {
+    btnResetProgress.addEventListener('click', resetHabitProgressToday);
+  }
+  if (progressModal) {
+    progressModal.addEventListener('click', (e) => {
+      if (e.target === progressModal) closeProgressModal();
     });
   }
 
@@ -759,38 +980,52 @@
     const activeHabits = getActiveHabits();
     const primary = getPrimaryHabit();
 
-    const streakLabel = document.getElementById('today-streak-label');
-    if (streakLabel) {
-      streakLabel.textContent = primary.streakPhrase;
-    }
-
     const commSub = document.getElementById('today-community-sub');
     if (commSub) {
       commSub.textContent = primary.todayEncourage;
     }
 
+    const addHint = document.getElementById('today-add-progress-hint');
+    const anyLogged = activeHabits.some((id) => (state.todayAmount[id] || 0) > 0);
+    if (addHint) {
+      if (anyLogged) {
+        const summaries = activeHabits
+          .filter((id) => (state.todayAmount[id] || 0) > 0)
+          .map((id) => `${HABIT_CATALOG[id].title}: ${state.todayAmount[id]} ${HABIT_CATALOG[id].shortUnit}`);
+        addHint.textContent = `Hoje: ${summaries.join(' · ')}`;
+      } else {
+        addHint.textContent = 'Clique para lançar quanto você realizou hoje';
+      }
+    }
+
     const listContainer = document.getElementById('today-habits-list-container');
     if (listContainer) {
-      const tops = [312, 394, 476];
+      const tops = [282, 368, 454];
       listContainer.innerHTML = activeHabits
         .map((habitId, idx) => {
           const h = HABIT_CATALOG[habitId];
           const g = state.habitGoals[habitId];
-          const isDone = Boolean(state.todayDone[habitId]);
-          const topPx = tops[idx] || 312 + idx * 82;
+          const currentAmt = state.todayAmount[habitId] || 0;
+          const habitPct = getHabitTodayPct(habitId);
+          const isDone = currentAmt >= g.daily;
+          const topPx = tops[idx] || 282 + idx * 86;
           const btnBg = isDone ? '#ddedaa' : '#eee7fa';
           const btnIcon = isDone ? 'assets/c1c8a.svg' : 'assets/a16a6.svg';
-          const statusSuffix = isDone ? 'concluído hoje' : `meta: ${g.weekly}x/sem`;
+          const fillBg = isDone ? '#7bc67e' : '#8fd2fa';
 
           return `
-            <div class="el today-habit-card interactive-click" data-today-habit="${habitId}" style="left: 24px; top: ${topPx}px; width: 354px; height: 72px; border-radius: 18px; background-color: #ffffff; border: 1px solid #e9e3ee; overflow: hidden;">
-              <div class="el" style="left: 11px; top: 12px; width: 46px; height: 46px; border-radius: 14px; background-color: ${h.todayBoxBg};"></div>
-              <div class="icon-slot" style="left: 24px; top: 24px; width: 21px; height: 21px;">
+            <div class="el today-habit-card interactive-click" data-today-habit="${habitId}" style="left: 24px; top: ${topPx}px; width: 354px; height: 76px; border-radius: 18px; background-color: #ffffff; border: 1px solid #e9e3ee; overflow: hidden;" title="Clique para adicionar progresso em ${h.title}">
+              <div class="el" style="left: 11px; top: 14px; width: 46px; height: 46px; border-radius: 14px; background-color: ${h.todayBoxBg};"></div>
+              <div class="icon-slot" style="left: 24px; top: 26px; width: 21px; height: 21px;">
                 <img src="${h.iconToday}" alt="" width="21" height="21" />
               </div>
-              <p class="txt txt-nowrap fw-semibold" style="left: 70px; top: 12px; font-size: 14px; color: #292335;">${h.title}</p>
-              <p class="txt txt-nowrap fw-regular" style="left: 70px; top: 38px; font-size: 11px; color: #77717f;">${g.daily} ${h.dailyUnit} · ${statusSuffix}</p>
-              <div class="el" style="left: 302px; top: 17px; width: 36px; height: 36px; border-radius: 12px; background-color: ${btnBg}; overflow: hidden;">
+              <p class="txt txt-nowrap fw-semibold" style="left: 70px; top: 11px; font-size: 14px; color: #292335;">${h.title}</p>
+              <p class="txt txt-nowrap fw-semibold" style="left: 252px; top: 12px; font-size: 11px; color: ${isDone ? '#415229' : '#8fd2fa'};">${habitPct}%</p>
+              <p class="txt txt-nowrap fw-regular" style="left: 70px; top: 34px; font-size: 11px; color: #77717f;">${currentAmt} de ${g.daily} ${h.shortUnit} hoje · meta: ${g.weekly}x/sem</p>
+              <div class="habit-card-mini-track">
+                <div class="habit-card-mini-fill" style="width: ${habitPct}%; background-color: ${fillBg};"></div>
+              </div>
+              <div class="el" style="left: 302px; top: 20px; width: 36px; height: 36px; border-radius: 12px; background-color: ${btnBg}; overflow: hidden;">
                 <div class="icon-slot" style="left: 8px; top: 8px; width: 20px; height: 20px;">
                   <img src="${btnIcon}" alt="" width="20" height="20" />
                 </div>
@@ -803,17 +1038,16 @@
       listContainer.querySelectorAll('[data-today-habit]').forEach((card) => {
         card.addEventListener('click', () => {
           const hId = card.getAttribute('data-today-habit');
-          state.todayDone[hId] = !state.todayDone[hId];
-          renderTodayScreen();
-          renderProgressScreen();
+          openProgressModal(hId);
         });
       });
     }
 
-    // Atualiza contador e porcentagem no card azul "Resumo do dia"
+    // Cálculo proporcional da porcentagem total do dia no card azul "Resumo do dia"
     const total = activeHabits.length;
     const doneCount = activeHabits.filter((id) => state.todayDone[id]).length;
-    const pct = total > 0 ? Math.round((doneCount / total) * 100) : 0;
+    const sumPct = activeHabits.reduce((acc, id) => acc + getHabitTodayPct(id), 0);
+    const overallPct = total > 0 ? Math.round(sumPct / total) : 0;
 
     const todayCountEl = document.getElementById('today-habits-count');
     const todayPctEl = document.getElementById('today-habits-pct');
@@ -824,14 +1058,20 @@
       todayCountEl.textContent = `${doneCount} de ${total} ${noun}`;
     }
     if (todayPctEl) {
-      todayPctEl.textContent = `${pct}%`;
-      todayPctEl.style.left = pct === 100 ? '277px' : pct === 0 ? '286px' : '281px';
+      todayPctEl.textContent = `${overallPct}%`;
+      todayPctEl.style.left = overallPct === 100 ? '277px' : overallPct < 10 ? '286px' : '281px';
     }
     if (todayMsgEl) {
-      todayMsgEl.textContent =
-        doneCount === total
-          ? 'Parabéns! Você concluiu sua meta diária de hoje!'
-          : 'Um passo de cada vez. Você está indo bem!';
+      if (overallPct >= 100) {
+        todayMsgEl.textContent = 'Parabéns! Você atingiu 100% da sua meta diária hoje!';
+      } else if (overallPct > 0) {
+        const firstLoggedId = activeHabits.find((id) => (state.todayAmount[id] || 0) > 0) || activeHabits[0];
+        const fh = HABIT_CATALOG[firstLoggedId];
+        const fg = state.habitGoals[firstLoggedId];
+        todayMsgEl.textContent = `Você já ${fh.verbPast} ${state.todayAmount[firstLoggedId]} de ${fg.daily} ${fh.shortUnit} hoje (${overallPct}% concluído)!`;
+      } else {
+        todayMsgEl.textContent = 'Um passo de cada vez. Clique em Adicionar progresso!';
+      }
     }
   }
 
@@ -850,6 +1090,8 @@
     const currentHabitId = activeHabits[state.calendarHabitIdx] || activeHabits[0];
     const h = HABIT_CATALOG[currentHabitId];
     const g = state.habitGoals[currentHabitId];
+    const currentAmt = state.todayAmount[currentHabitId] || 0;
+    const habitPctToday = getHabitTodayPct(currentHabitId);
     const doneTodayCount = activeHabits.filter((id) => state.todayDone[id]).length;
 
     const statCheckins = document.getElementById('stat-checkins');
@@ -867,19 +1109,16 @@
       statCheckins.textContent = isMonthView ? String(38 + doneTodayCount) : String(14 + doneTodayCount);
     }
     if (statReading) {
-      statReading.textContent = h.statMiddleTop;
+      statReading.textContent = currentAmt > 0 ? `${currentAmt} ${h.shortUnit}` : h.statMiddleTop;
     }
     if (statReadingLabel) {
-      statReadingLabel.textContent = h.statMiddleSub;
+      statReadingLabel.textContent = currentAmt > 0 ? `hoje em ${h.title.toLowerCase()}` : h.statMiddleSub;
     }
     if (statGoal) {
-      const pct = isMonthView
-        ? Math.min(100, Math.round(((15 + (state.todayDone[currentHabitId] ? 1 : 0)) / g.monthly) * 100))
-        : Math.min(100, Math.round(((5 + (state.todayDone[currentHabitId] ? 1 : 0)) / g.weekly) * 100));
-      statGoal.textContent = `${pct}%`;
+      statGoal.textContent = currentAmt > 0 ? `${habitPctToday}%` : isMonthView ? '81%' : '76%';
     }
     if (statGoalLabel) {
-      statGoalLabel.textContent = isMonthView ? `meta ${g.monthly}d/mês` : `meta ${g.weekly}d/sem`;
+      statGoalLabel.textContent = currentAmt > 0 ? 'da meta de hoje' : isMonthView ? `meta ${g.monthly}d/mês` : `meta ${g.weekly}d/sem`;
     }
 
     if (chartTitle) {
@@ -887,7 +1126,7 @@
         activeHabits.length === 1 ? `${h.title} · semana` : 'Hábitos concluídos';
     }
     if (chartSubtitle) {
-      chartSubtitle.textContent = `Meta diária: ${g.daily} ${h.dailyUnit}`;
+      chartSubtitle.textContent = `Hoje: ${currentAmt} de ${g.daily} ${h.shortUnit} (${habitPctToday}%)`;
     }
 
     if (calTitle) {
@@ -896,15 +1135,15 @@
     }
 
     if (footerMsg) {
-      footerMsg.textContent = `${h.title}: meta de ${g.daily} ${h.dailyUnit} · ${g.weekly}x/sem · ${g.monthly}x/mês.`;
+      footerMsg.textContent = `${h.title}: ${currentAmt}/${g.daily} ${h.shortUnit} hoje (${habitPctToday}%) · Meta: ${g.weekly}x/sem · ${g.monthly}x/mês.`;
     }
 
     if (barDay18) {
-      const barLevel = Math.max(1, doneTodayCount);
-      const heights = { 1: 31, 2: 62, 3: 93 };
-      const tops = { 1: 142, 2: 111, 3: 80 };
-      barDay18.style.height = `${heights[barLevel] || 62}px`;
-      barDay18.style.top = `${tops[barLevel] || 111}px`;
+      const sumPct = activeHabits.reduce((acc, id) => acc + getHabitTodayPct(id), 0);
+      const overallRatio = activeHabits.length > 0 ? sumPct / (activeHabits.length * 100) : 0;
+      const barH = Math.max(18, Math.round(overallRatio * 93));
+      barDay18.style.height = `${barH}px`;
+      barDay18.style.top = `${173 - barH}px`;
     }
   }
 
@@ -948,7 +1187,6 @@
       featuredSub.textContent = primary.featuredChallengeSub;
     }
 
-    // Ordena comunidades: primeiro as dos hábitos escolhidos pelo usuário
     const allHabitIds = Object.keys(HABIT_CATALOG);
     const orderedIds = [
       ...activeHabits,
@@ -964,7 +1202,7 @@
     const searchInput = document.getElementById('community-search-input');
     const query = searchInput ? searchInput.value.trim().toLowerCase() : '';
 
-    let filteredIds = orderedIds.filter((id) => {
+    const filteredIds = orderedIds.filter((id) => {
       if (currentCommFilter === 'minhas' && !joinedSet.has(id)) return false;
       if (query) {
         const h = HABIT_CATALOG[id];
@@ -974,7 +1212,6 @@
       return true;
     });
 
-    // Exibe os 3 primeiros cards no espaço do frame (priorizando os escolhidos)
     const visibleIds = filteredIds.slice(0, 3);
     const container = document.getElementById('communities-list-container');
     if (!container) return;
@@ -1074,7 +1311,6 @@
     }
   }
 
-  // Interações de desafio, curtir e comentar na tela 06 · Comunidade
   const btnJoinChallengeBg = document.getElementById('btn-join-challenge-bg');
   const btnJoinChallengeTxt = document.getElementById('btn-join-challenge-txt');
   let joinedChallenge = false;

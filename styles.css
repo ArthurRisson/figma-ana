@@ -729,6 +729,185 @@ body {
   color: #ffffff;
 }
 
+/* =========================================================================
+   Modal "Adicionar progresso" e barras de progresso em Hoje
+   ========================================================================= */
+.today-add-progress-banner:hover {
+  border-color: #e46358 !important;
+  background-color: #fffdfa !important;
+}
+
+.prog-HabitTabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.prog-HabitTabBtn {
+  appearance: none;
+  border: 1px solid #e9e3ee;
+  background: #ffffff;
+  color: #77717f;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 7px 13px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.16s ease;
+}
+
+.prog-HabitTabBtn.is-active {
+  background: #eee7fa;
+  border-color: #b69bdd;
+  color: #292335;
+}
+
+.prog-QuestionBox {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.prog-QuestionTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: #292335 !important;
+}
+
+.prog-QuestionGoal {
+  font-size: 11.5px;
+  color: #77717f !important;
+}
+
+.prog-InputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #ddedaa;
+  border: 1.5px solid #e9e3ee;
+  border-radius: 15px;
+  height: 54px;
+  padding: 0 14px;
+}
+
+.prog-InputWrapper:focus-within {
+  border-color: #8fd2fa;
+  box-shadow: 0 0 0 3px rgba(143, 210, 250, 0.25);
+}
+
+.prog-NumberInput {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #292335;
+  outline: none;
+}
+
+.prog-UnitBadge {
+  font-size: 12px;
+  font-weight: 600;
+  color: #415229;
+  background: rgba(255, 255, 255, 0.65);
+  padding: 4px 10px;
+  border-radius: 9px;
+  white-space: nowrap;
+}
+
+.prog-QuickChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.prog-ChipBtn {
+  appearance: none;
+  border: 1px solid #e9e3ee;
+  background: #ffffff;
+  color: #292335;
+  font-family: 'Inter', sans-serif;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 6px 11px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.14s ease;
+}
+
+.prog-ChipBtn:hover {
+  background: #8fd2fa;
+  border-color: #8fd2fa;
+  color: #ffffff;
+}
+
+.prog-LivePreview {
+  background: #ffffff;
+  border: 1px solid #e9e3ee;
+  border-radius: 14px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.prog-PreviewHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #292335;
+}
+
+.prog-PreviewHeader strong {
+  color: #e46358;
+  font-size: 14px;
+}
+
+.prog-BarTrack {
+  width: 100%;
+  height: 8px;
+  background: #eee7fa;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.prog-BarFill {
+  height: 100%;
+  background: #8fd2fa;
+  border-radius: 999px;
+  transition: width 0.22s ease, background-color 0.22s ease;
+}
+
+.prog-BarFill.is-complete {
+  background: #7bc67e;
+}
+
+/* Barra de progresso dentro do card de hábito na tela Hoje */
+.habit-card-mini-track {
+  position: absolute;
+  left: 70px;
+  top: 56px;
+  width: 214px;
+  height: 6px;
+  background: #eee7fa;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.habit-card-mini-fill {
+  height: 100%;
+  background: #8fd2fa;
+  border-radius: 999px;
+  transition: width 0.25s ease;
+}
+
 /* Toast notification */
 .proto-Toast {
   position: fixed;
